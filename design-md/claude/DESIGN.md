@@ -298,100 +298,104 @@ components:
     padding: 64px
 ---
 
-## Overview
+> 🌐 本文档由 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 翻译,英文原版见原项目。
+>
+> ⚠️ 本文件超过 10000 字符,仅汉化核心章节(概览 / 色彩 / 字体 / 布局 / 禁忌清单);组件明细、响应式、迭代指南等其余章节保留英文原版,请对照原项目阅读。
 
-Claude.com is the warmest, most editorial interface in the AI-product category. The base atmosphere is a **tinted cream canvas** (`{colors.canvas}` — #faf9f5) — distinctly warm, deliberately not the cool gray-white that every other AI brand uses. Headlines run a **slab-serif display** ("Copernicus" / Tiempos Headline) at weight 400 with negative letter-spacing, paired with **StyreneB / Inter** body sans. The combination feels like a literary publication, not a SaaS marketing page.
+## 概览(Overview)
 
-Brand voltage comes from the **cream + coral pairing** — coral (`{colors.primary}` — #cc785c) is the signature Anthropic accent, used on every primary CTA, on the brand wordmark, and on full-bleed callout cards. The coral is warm, slightly muted, never cyan/blue — a deliberate counter-positioning against OpenAI's cool slate, Google's saturated blue, and Microsoft's corporate cyan.
+Claude.com 是 AI 产品品类中最温暖、最具编辑排版气质的界面。整体氛围建立在**带色调的米白画布**(`{colors.canvas}` — #faf9f5)之上——明显偏暖,刻意避开其他 AI 品牌千篇一律的冷灰白。标题使用**粗衬线展示字体**("Copernicus" / Tiempos Headline),字重 400、负字距,正文搭配 **StyreneB / Inter** 人文无衬线体。整体气质像一本文学出版物,而不是 SaaS 营销页。
 
-The system has three surface modes that alternate page-by-page:
-1. **Cream canvas** (`{colors.canvas}`) — default body floor
-2. **Light cream cards** (`{colors.surface-card}`) — feature card backgrounds
-3. **Dark navy product surfaces** (`{colors.surface-dark}`) — code editor mockups, model showcase cards, pre-footer CTAs, footer itself
+品牌张力来自**米白 + 珊瑚色的配对**——珊瑚色(`{colors.primary}` — #cc785c)是 Anthropic 的标志性强调色,用于所有主 CTA、品牌字标以及通栏提示卡片。这种珊瑚色温暖、略微收敛,绝不用青色/蓝色——刻意与 OpenAI 的冷 slate 灰、Google 的高饱和蓝、Microsoft 的企业青形成反差定位。
 
-The dark surfaces are where Claude shows its product chrome — code blocks, terminal output, model comparison tables, agentic-flow diagrams. The cream-to-dark contrast is the page's pacing rhythm.
+该系统有三种表面模式,在页面间交替出现:
+1. **米白画布**(`{colors.canvas}`)——默认页面底色
+2. **浅米色卡片**(`{colors.surface-card}`)——特性卡片背景
+3. **深色产品表面**(`{colors.surface-dark}`)——代码编辑器模型图、模型展示卡片、页脚前 CTA、页脚本身
 
-**Key Characteristics:**
-- Warm cream canvas (`{colors.canvas}` — #faf9f5) with dark warm-ink text (`{colors.ink}` — #141413). The brand's defining color choice.
-- Coral primary CTA (`{colors.primary}` — #cc785c). Used scarcely on individual buttons, generously on full-bleed coral callout cards.
-- Slab-serif display headlines via Copernicus / Tiempos Headline at weight 400 with negative letter-spacing. Pairs with humanist sans body for a literary editorial voice.
-- Dark navy product mockup cards (`{colors.surface-dark}` — #181715) carrying code blocks, terminal panels, model comparison data — the brand shows the product chrome at scale rather than abstract marketing illustrations.
-- Light cream feature cards (`{colors.surface-card}` — #efe9de) — slightly darker than canvas, used for content-driven feature explanations.
-- Anthropic radial-spike mark — a small black asterisk-like glyph (4-spoke radial) — appears as the brand wordmark prefix and as a content marker.
-- Border radius is hierarchical: `{rounded.md}` (8px) for buttons + inputs, `{rounded.lg}` (12px) for content + product cards, `{rounded.xl}` (16px) for the hero illustration container, `{rounded.pill}` for badges.
-- Section rhythm `{spacing.section}` (96px) — modern-SaaS standard. Internal card padding stays generous at `{spacing.xl}` (32px).
+深色表面是 Claude 展示产品外壳的地方——代码块、终端输出、模型对比表、代理流程图。米白到深色的对比构成了页面的节奏感。
 
-## Colors
+**关键特征:**
+- 暖米白画布(`{colors.canvas}` — #faf9f5)配深暖墨色文字(`{colors.ink}` — #141413)。这是品牌最具定义性的色彩选择。
+- 珊瑚色主 CTA(`{colors.primary}` — #cc785c)。在单个按钮上克制使用,在通栏珊瑚提示卡片上大量使用。
+- Copernicus / Tiempos Headline 粗衬线展示标题,字重 400、负字距。与人文无衬线正文搭配,形成文学化的编辑声音。
+- 深色产品模型卡片(`{colors.surface-dark}` — #181715)承载代码块、终端面板、模型对比数据——品牌直接大规模展示真实产品外壳,而非抽象营销插画。
+- 浅米色特性卡片(`{colors.surface-card}` — #efe9de)——比画布略深,用于内容驱动的特性说明。
+- Anthropic 放射星标——一个类似星号的小黑色图形(四辐条放射状)——作为品牌字标前缀和内容标记出现。
+- 圆角分层明确:`{rounded.md}`(8px)用于按钮与输入框,`{rounded.lg}`(12px)用于内容与产品卡片,`{rounded.xl}`(16px)用于 Hero 插画容器,`{rounded.pill}` 用于徽章。
+- 区块节奏 `{spacing.section}`(96px)——现代 SaaS 标准。卡片内边距保持宽裕的 `{spacing.xl}`(32px)。
 
-### Brand & Accent
-- **Coral / Primary** (`{colors.primary}` — #cc785c): The signature Anthropic warm coral. Used on every primary CTA background, on full-bleed coral callout cards, on the brand wordmark accent. The most-recognized Anthropic color outside of the spike-mark logo.
-- **Coral Active** (`{colors.primary-active}` — #a9583e): The press / hover-darker variant.
-- **Coral Disabled** (`{colors.primary-disabled}` — #e6dfd8): A desaturated cream-tinted disabled state.
-- **Accent Teal** (`{colors.accent-teal}` — #5db8a6): Used sparingly on secondary product surfaces (terminal status indicators, "active connection" dots in connectors page).
-- **Accent Amber** (`{colors.accent-amber}` — #e8a55a): A small companion warm-tone used on category badges and inline highlights.
+## 色彩(Colors)
 
-### Surface
-- **Canvas** (`{colors.canvas}` — #faf9f5): The default page floor. Tinted cream — warm, deliberately not pure white.
-- **Surface Soft** (`{colors.surface-soft}` — #f5f0e8): Section dividers, very-soft band backgrounds.
-- **Surface Card** (`{colors.surface-card}` — #efe9de): Feature cards, content cards. One step darker than canvas.
-- **Surface Cream Strong** (`{colors.surface-cream-strong}` — #e8e0d2): A strongest-cream variant used on selected category tabs and emphasized section bands.
-- **Surface Dark** (`{colors.surface-dark}` — #181715): Code editor mockups, model showcase cards, footer. The dominant dark surface.
-- **Surface Dark Elevated** (`{colors.surface-dark-elevated}` — #252320): Elevated cards inside dark bands (settings panels in mockups).
-- **Surface Dark Soft** (`{colors.surface-dark-soft}` — #1f1e1b): Slightly lighter dark, used for code block backgrounds inside larger dark cards.
-- **Hairline** (`{colors.hairline}` — #e6dfd8): The 1px border tone on cream surfaces. Same hex as `{colors.primary-disabled}` — borders feel like one elevation step rather than ink lines.
-- **Hairline Soft** (`{colors.hairline-soft}` — #ebe6df): Barely-visible divider used inside the same band.
+### 品牌与强调色
+- **珊瑚色 / 主色**(`{colors.primary}` — #cc785c):Anthropic 标志性的暖珊瑚色。用于所有主 CTA 背景、通栏珊瑚提示卡片、品牌字标点缀。除放射星标 logo 外最具辨识度的 Anthropic 色彩。
+- **珊瑚色激活态**(`{colors.primary-active}` — #a9583e):按压/悬停时的加深变体。
+- **珊瑚色禁用态**(`{colors.primary-disabled}` — #e6dfd8):去饱和的米白调禁用状态。
+- **强调青绿**(`{colors.accent-teal}` — #5db8a6):少量用于次要产品表面(终端状态指示、连接器页的"已连接"圆点)。
+- **强调琥珀**(`{colors.accent-amber}` — #e8a55a):用于分类徽章与行内高亮的小面积暖色伴生色。
 
-### Text
-- **Ink** (`{colors.ink}` — #141413): All headlines and primary text. Warm dark, slightly off-pure-black.
-- **Body Strong** (`{colors.body-strong}` — #252523): Emphasized paragraphs, lead text.
-- **Body** (`{colors.body}` — #3d3d3a): Default running-text color.
-- **Muted** (`{colors.muted}` — #6c6a64): Sub-headings, breadcrumbs, footer-adjacent secondary text.
-- **Muted Soft** (`{colors.muted-soft}` — #8e8b82): Captions, fine-print, copyright lines.
-- **On Primary** (`{colors.on-primary}` — #ffffff): Text on coral buttons.
-- **On Dark** (`{colors.on-dark}` — #faf9f5): Cream-tinted white used on dark surfaces (echoes the canvas tone).
-- **On Dark Soft** (`{colors.on-dark-soft}` — #a09d96): Footer body text, secondary labels in dark mockups.
+### 表面
+- **画布**(`{colors.canvas}` — #faf9f5):默认页面底色。带色调的米白——温暖,刻意不用纯白。
+- **柔和表面**(`{colors.surface-soft}` — #f5f0e8):分区隔断、极柔和的带状背景。
+- **卡片表面**(`{colors.surface-card}` — #efe9de):特性卡片、内容卡片。比画布深一档。
+- **浓米色表面**(`{colors.surface-cream-strong}` — #e8e0d2):最深的米色变体,用于部分分类标签与强调区块带。
+- **深色表面**(`{colors.surface-dark}` — #181715):代码编辑器模型图、模型展示卡片、页脚。主导深色表面。
+- **深色浮起表面**(`{colors.surface-dark-elevated}` — #252320):深色区块内的浮起卡片(模型图中的设置面板)。
+- **柔和深色表面**(`{colors.surface-dark-soft}` — #1f1e1b):略浅的深色,用于大深色卡片内部的代码块背景。
+- **发丝线**(`{colors.hairline}` — #e6dfd8):米色表面上的 1px 边框色调。与 `{colors.primary-disabled}` 同色——边框读起来像一级高差,而不是墨线。
+- **柔和发丝线**(`{colors.hairline-soft}` — #ebe6df):同一区块内几乎不可见的分隔线。
 
-### Semantic
-- **Success** (`{colors.success}` — #5db872): Green status dots, "available" indicators.
-- **Warning** (`{colors.warning}` — #d4a017): Warning callouts (rare on marketing surfaces).
-- **Error** (`{colors.error}` — #c64545): Validation errors.
+### 文字
+- **墨色**(`{colors.ink}` — #141413):所有标题与主要文字。暖深色,略偏离纯黑。
+- **正文强调**(`{colors.body-strong}` — #252523):强调段落、导语。
+- **正文**(`{colors.body}` — #3d3d3a):默认行文颜色。
+- **弱化**(`{colors.muted}` — #6c6a64):子标题、面包屑、页脚附近的次要文字。
+- **更弱化**(`{colors.muted-soft}` — #8e8b82):说明文字、细则、版权行。
+- **主色上的文字**(`{colors.on-primary}` — #ffffff):珊瑚色按钮上的文字。
+- **深色上的文字**(`{colors.on-dark}` — #faf9f5):深色表面上带米调的白色(呼应画布色调)。
+- **深色上的次要文字**(`{colors.on-dark-soft}` — #a09d96):页脚正文、深色模型图中的次要标签。
 
-## Typography
+### 语义色
+- **成功**(`{colors.success}` — #5db872):绿色状态圆点、"可用"指示。
+- **警告**(`{colors.warning}` — #d4a017):警告提示(营销表面少见)。
+- **错误**(`{colors.error}` — #c64545):校验错误。
 
-### Font Family
-The system runs **Copernicus** (or **Tiempos Headline** as substitute) as the slab-serif display face for headlines, and **StyreneB** (or **Inter** as substitute) as the humanist sans for body, navigation, and UI labels. **JetBrains Mono** handles code blocks. The fallback stack walks `Tiempos Headline, Garamond, "Times New Roman", serif` for display and `Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif` for body.
+## 字体(Typography)
 
-The display/body split is editorial:
-- Copernicus serif (weight 400, negative tracking) → h1, h2, h3, hero display
-- StyreneB sans (weight 400-500) → body, navigation, buttons, captions, labels
-- JetBrains Mono → all code blocks and terminal text
+### 字体族
+系统使用 **Copernicus**(替代:**Tiempos Headline**)作为标题的粗衬线展示字体,**StyreneB**(替代:**Inter**)作为正文、导航和 UI 标签的人文无衬线体,**JetBrains Mono** 负责代码块。回退字体栈:展示字体为 `Tiempos Headline, Garamond, "Times New Roman", serif`,正文为 `Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`。
 
-### Hierarchy
+展示/正文的分工是编辑式的:
+- Copernicus 衬线(字重 400,负字距)→ h1、h2、h3、Hero 展示标题
+- StyreneB 无衬线(字重 400-500)→ 正文、导航、按钮、说明文字、标签
+- JetBrains Mono → 所有代码块与终端文字
 
-| Token | Size | Weight | Line Height | Letter Spacing | Use |
+### 层级(Hierarchy)
+
+| Token | Size | Weight | Line Height | Letter Spacing | 用途 |
 |---|---|---|---|---|---|
-| `{typography.display-xl}` | 64px | 400 | 1.05 | -1.5px | Homepage h1 ("Meet your thinking partner") — Copernicus serif |
-| `{typography.display-lg}` | 48px | 400 | 1.1 | -1px | Section heads — Copernicus |
-| `{typography.display-md}` | 36px | 400 | 1.15 | -0.5px | Sub-section heads, model names — Copernicus |
-| `{typography.display-sm}` | 28px | 400 | 1.2 | -0.3px | Pricing tier names, callout headlines — Copernicus |
-| `{typography.title-lg}` | 22px | 500 | 1.3 | 0 | Pricing plan size labels — StyreneB |
-| `{typography.title-md}` | 18px | 500 | 1.4 | 0 | Feature card titles, intro paragraphs |
-| `{typography.title-sm}` | 16px | 500 | 1.4 | 0 | Connector tile titles, list labels |
-| `{typography.body-md}` | 16px | 400 | 1.55 | 0 | Default running-text — StyreneB |
-| `{typography.body-sm}` | 14px | 400 | 1.55 | 0 | Footer body, fine-print |
-| `{typography.caption}` | 13px | 500 | 1.4 | 0 | Badge labels, captions |
-| `{typography.caption-uppercase}` | 12px | 500 | 1.4 | 1.5px | Category tags, "NEW" badges |
-| `{typography.code}` | 14px | 400 | 1.6 | 0 | Code blocks — JetBrains Mono |
-| `{typography.button}` | 14px | 500 | 1.0 | 0 | Standard button labels |
-| `{typography.nav-link}` | 14px | 500 | 1.4 | 0 | Top-nav menu items |
+| `{typography.display-xl}` | 64px | 400 | 1.05 | -1.5px | 首页 h1("Meet your thinking partner")— Copernicus 衬线 |
+| `{typography.display-lg}` | 48px | 400 | 1.1 | -1px | 区块标题 — Copernicus |
+| `{typography.display-md}` | 36px | 400 | 1.15 | -0.5px | 子区块标题、模型名 — Copernicus |
+| `{typography.display-sm}` | 28px | 400 | 1.2 | -0.3px | 定价档位名、提示标题 — Copernicus |
+| `{typography.title-lg}` | 22px | 500 | 1.3 | 0 | 定价方案规格标签 — StyreneB |
+| `{typography.title-md}` | 18px | 500 | 1.4 | 0 | 特性卡片标题、引导段落 |
+| `{typography.title-sm}` | 16px | 500 | 1.4 | 0 | 连接器磁贴标题、列表标签 |
+| `{typography.body-md}` | 16px | 400 | 1.55 | 0 | 默认行文 — StyreneB |
+| `{typography.body-sm}` | 14px | 400 | 1.55 | 0 | 页脚正文、细则 |
+| `{typography.caption}` | 13px | 500 | 1.4 | 0 | 徽章标签、说明文字 |
+| `{typography.caption-uppercase}` | 12px | 500 | 1.4 | 1.5px | 分类标签、"NEW" 徽章 |
+| `{typography.code}` | 14px | 400 | 1.6 | 0 | 代码块 — JetBrains Mono |
+| `{typography.button}` | 14px | 500 | 1.0 | 0 | 标准按钮文字 |
+| `{typography.nav-link}` | 14px | 500 | 1.4 | 0 | 顶部导航菜单项 |
 
-### Principles
-Display sizes use weight 400 (regular), never bold. Negative letter-spacing (-0.3 to -1.5px) is essential — Copernicus without it reads as off-brand. The serif character is what gives Anthropic its literary, considered voice; switching to a sans-serif display would make Claude feel like every other AI tool.
+### 原则(Principles)
+展示字号使用字重 400(常规),从不加粗。负字距(-0.3 至 -1.5px)必不可少——没有它的 Copernicus 一眼就不对味。衬线特质赋予了 Anthropic 文学般、深思熟虑的声音;换成无衬线展示字体会让 Claude 变得和其他 AI 工具毫无区别。
 
-Body type stays at weight 400 for paragraphs, weight 500 for labels and emphasized phrases. The sans body is humanist (StyreneB) — never geometric. Inter is an acceptable substitute because of its similar humanist proportions; Helvetica or Arial would be too neutral and break the warm-editorial feel.
+正文字重保持 400,标签和强调短语用 500。无衬线正文是人文风格的(StyreneB)——绝不是几何风格。Inter 因相近的人文比例是可接受的替代;Helvetica 或 Arial 过于中性,会破坏暖色编辑气质。
 
-### Note on Font Substitutes
-If Copernicus / Tiempos Headline is unavailable, **Cormorant Garamond** at weight 500 with -0.02em letter-spacing is the closest open-source approximation. **EB Garamond** is a fallback. For StyreneB, **Inter** is the closest match — both are humanist sans designed for screen reading. **Söhne** is another close alternative if licensed.
+### 字体替代说明(Note on Font Substitutes)
+如果 Copernicus / Tiempos Headline 不可用,**Cormorant Garamond**(字重 500、-0.02em 字距)是最接近的开源近似。**EB Garamond** 为后备。StyreneB 的最接近替代是 **Inter**——两者都是为屏幕阅读设计的人文无衬线体。有授权条件时 **Söhne** 也是接近的选择。
 
 ## Layout
 
@@ -520,25 +524,25 @@ When photography is used (rare — mostly testimonials), avatars crop to perfect
 
 **`footer`** — Dark navy footer that closes every page. Background `{colors.surface-dark}` (#181715), text `{colors.on-dark-soft}`. 4-column link list at desktop covering Product / Company / Resources / Legal. Vertical padding 64px. The Anthropic spike-mark + "Anthropic" wordmark sits at the top in `{colors.on-dark}`. The footer never inverts.
 
-## Do's and Don'ts
+## 应做与禁忌(Do's and Don'ts)
 
-### Do
-- Anchor every page on the cream canvas. Pure white reads as "any other AI tool"; the warm tint is the brand differentiator.
-- Use Copernicus serif for every display headline. Pair with StyreneB sans body. Negative letter-spacing on display sizes is non-negotiable.
-- Reserve `{colors.primary}` (coral) for primary CTAs and full-bleed `{component.callout-card-coral}` moments. Don't paint accent moments coral elsewhere.
-- Use `{component.product-mockup-card-dark}` and `{component.code-window-card}` to show actual Claude product chrome. Don't paint marketing illustrations of code when you can show real code.
-- Pair `{component.feature-card}` (cream) with `{component.product-mockup-card-dark}` (navy) in alternating bands. The cream-to-dark rhythm is the brand's pacing mechanism.
-- Use the Anthropic spike-mark glyph as the brand wordmark prefix. Never invert the mark to white-on-dark within the wordmark itself.
-- Apply `{spacing.section}` (96px) between major bands.
+### 应做(Do)
+- 每个页面都锚定在米白画布上。纯白会读成"随便哪个 AI 工具";暖色调才是品牌差异点。
+- 所有展示标题都用 Copernicus 衬线,搭配 StyreneB 无衬线正文。展示字号的负字距没有商量余地。
+- 把 `{colors.primary}`(珊瑚色)留给主 CTA 和通栏 `{component.callout-card-coral}` 时刻。不要在其他强调处随意涂珊瑚色。
+- 用 `{component.product-mockup-card-dark}` 和 `{component.code-window-card}` 展示真实的 Claude 产品外壳。能放真代码就别画营销插画。
+- 让 `{component.feature-card}`(米色)与 `{component.product-mockup-card-dark}`(深色)在相邻区块交替出现。米白到深色的节奏就是品牌的呼吸机制。
+- 用 Anthropic 放射星标图形作为品牌字标前缀。字标内部绝不反白放在深色上。
+- 主要区块之间应用 `{spacing.section}`(96px)。
 
-### Don't
-- Don't use cool grays or pure white for canvas. Cream is the brand.
-- Don't bold serif display weight. Copernicus at 700 reads as bombastic; the system stays at 400.
-- Don't use cool blue or saturated cyan as a brand accent. The coral is the brand voltage.
-- Don't put coral everywhere. The coral is scarce on individual elements and generous only on full-bleed coral callout cards.
-- Don't use Inter for display headlines. The serif character is the brand voice.
-- Don't repeat the same surface mode in two consecutive bands. The pacing alternates: cream → cream-card → dark-mockup → cream → coral-callout → dark-footer.
-- Don't add hover state styling beyond what the system already encodes — primary darkens on press; nothing else changes.
+### 禁忌(Don't)
+- 不要用冷灰或纯白做画布。米白就是品牌。
+- 不要加粗衬线展示字重。Copernicus 用 700 会显得浮夸;系统保持在 400。
+- 不要用冷蓝或高饱和青色当品牌强调色。珊瑚色才是品牌电压。
+- 不要把珊瑚色铺满页面。它在单个元素上稀缺,只在通栏珊瑚提示卡片上慷慨。
+- 不要用 Inter 做展示标题。衬线特质就是品牌声音。
+- 不要在相邻两个区块重复同一表面模式。节奏必须交替:米白 → 米色卡片 → 深色模型图 → 米白 → 珊瑚提示 → 深色页脚。
+- 不要添加系统未编码的悬停样式——主按钮按压时加深,其余一律不变。
 
 ## Responsive Behavior
 
