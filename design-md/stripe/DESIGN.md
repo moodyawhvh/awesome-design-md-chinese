@@ -243,91 +243,95 @@ components:
     padding: 64px 24px
 ---
 
-## Overview
+> 🌐 本文档由 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 翻译,英文原版见原项目。
+>
+> ⚠️ 本文件超过 10000 字符,仅汉化核心章节(概览 / 色彩 / 字体 / 禁忌清单);布局、组件、响应式等其余章节保留英文原版,请对照原项目阅读。
 
-Stripi's design language opens with the gradient mesh. A wide horizontal band of pastel cream, sherbet orange, lavender, electric indigo, and ruby pink occupies the upper third of nearly every marketing page — the brand's instantly-recognizable atmospheric backdrop. Type and product UI mockups float above it on `{colors.canvas}` (white), with the gradient acting as both decoration and visual anchor. The lower portion of the page returns to white, with feature explanations on `{colors.canvas-soft}` (a barely-tinted cool off-white) and dashboard product mockups composited as faux IDE/console panels in deep navy.
+## 概览(Overview)
 
-The color system has two primary roles. **Indigo** (`{colors.primary}` — `#533afd`) is the brand's signature CTA color, used sparingly: one filled pill per band. **Deep navy** (`{colors.ink}` — `#0d253d`) is the universal body text color and the fill of dashboard mockups, the featured pricing tier, and the dark-app surfaces on the dashboard track. Ruby (`{colors.ruby}`) and magenta (`{colors.magenta}`) appear inside the gradient mesh and as accent dots in product UI mockups; they are not used as button colors.
+Stripe 的设计语言以渐变网格开场。一条由粉彩奶油色、雪柑橙、薰衣草紫、电光靛蓝和红宝石粉组成的宽幅水平色带,占据了几乎所有营销页的上三分之一——这是品牌一眼可辨的氛围背景。文字与产品 UI 模型图漂浮在其上方的 `{colors.canvas}`(白色)上,渐变同时充当装饰和视觉锚点。页面下半部分回归白色,特性说明放在 `{colors.canvas-soft}`(几乎无色调的冷白)上,仪表盘产品模型图则以深海军蓝的仿 IDE/控制台面板形式合成呈现。
 
-Typography is built around **Sohne** at weight 300 with negative letter-spacing — the brand's editorial-density display signature. Display sizes (32–56px) use -1.4px to -0.64px tracking; body sizes use 0; tabular caption sizes (where money and numerics matter) use the OpenType `tnum` feature plus a tightening -0.36 to -0.42px tracking. The `ss01` stylistic set is enabled across all roles.
+色彩系统有两个主要角色。**靛蓝**(`{colors.primary}` — `#533afd`)是品牌标志性的 CTA 色,使用克制:每个区块只有一个实心药丸按钮。**深海军蓝**(`{colors.ink}` — `#0d253d`)是通用的正文色,也是仪表盘模型图、精选定价档、仪表盘轨道上深色应用表面的填充色。红宝石色(`{colors.ruby}`)和品红(`{colors.magenta}`)出现在渐变网格和产品 UI 模型图的强调圆点中;从不用作按钮色。
 
-**Key Characteristics:**
-- Gradient-mesh backdrop on every marketing hero — cream/orange/lavender/indigo/ruby horizontally washed across the upper third of the page.
-- Single-indigo CTA hierarchy: filled `{colors.primary}` pill is the only filled button on marketing surfaces.
-- Sohne thin (weight 300) display tier with negative tracking from -1.4px to -0.2px depending on size.
-- Tabular-figure body type (`tnum`) for any cell containing money or numerics — the brand's quiet financial-data signal.
-- Dark-app dashboard track: deep navy product UI mockups sit composited above the white canvas, frequently with rendered code or dashboard tables inside.
-- Pill-shaped buttons (`{rounded.pill}` 9999px) with tight `8px 16px` padding — short, decisive, transactional.
-- Cream-band feature cards (`{colors.canvas-cream}`) introduce a warm interlude between blue/white sections without breaking the brand's chromatic logic.
+字体体系围绕字重 300、负字距的 **Sohne** 构建——这是品牌编辑密度的展示签名。展示字号(32–56px)使用 -1.4px 至 -0.64px 字距;正文字号为 0;表格说明字号(涉及金额与数字之处)启用 OpenType `tnum` 特性并收紧至 -0.36 至 -0.42px 字距。`ss01` 风格集在所有角色上全局启用。
 
-## Colors
+**关键特征:**
+- 每个营销 Hero 都有渐变网格背景——奶油/橙/薰衣草/靛蓝/红宝石横向铺满页面上三分之一。
+- 单一靛蓝 CTA 层级:实心 `{colors.primary}` 药丸是营销表面上唯一的实心按钮。
+- Sohne 细体(字重 300)展示层级,负字距随字号在 -1.4px 至 -0.2px 之间变化。
+- 表格数字正文字体(`tnum`)用于任何包含金额或数字的单元格——品牌对金融数据属性的安静宣示。
+- 深色应用仪表盘轨道:深海军蓝产品 UI 模型图合成在白色画布之上,内部常带有渲染好的代码或仪表盘表格。
+- 药丸形按钮(`{rounded.pill}` 9999px)配紧凑的 `8px 16px` 内边距——短促、果断、交易感。
+- 奶油色区块特性卡片(`{colors.canvas-cream}`)在蓝白章节之间插入一段暖色间奏,却不破坏品牌的色彩逻辑。
 
-> **Source pages:** home (`/`), `/payments`, `/pricing`, `dashboard.stripe.com/register/payments`.
+## 色彩(Colors)
 
-### Brand & Accent
-- **Indigo** (`{colors.primary}` — `#533afd`): The brand's signature CTA color. Filled-pill button, link emphasis, gradient anchor.
-- **Indigo Deep** (`{colors.primary-deep}` — `#4434d4`): A deeper indigo used in gradient mid-stops and as the press-state warmer alternative.
-- **Indigo Press** (`{colors.primary-press}` — `#2e2b8c`): Pressed-state lift of the primary.
-- **Indigo Soft** (`{colors.primary-soft}` — `#665efd`): A lighter indigo used in product-UI accents and chart highlights.
-- **Indigo Subdued** (`{colors.primary-bg-subdued-hover}` — `#b9b9f9`): Pale indigo fill used as soft tag background.
-- **Brand Dark 900** (`{colors.brand-dark-900}` — `#1c1e54`): The deep navy used on the featured pricing tier and dashboard chrome.
-- **Ruby** (`{colors.ruby}` — `#ea2261`): Gradient accent and chart highlight; never a button.
-- **Magenta** (`{colors.magenta}` — `#f96bee`): Brighter pink stop in gradient meshes.
-- **Lemon** (`{colors.lemon}` — `#9b6829`): Warm sherbet stop in gradient backdrops.
+> **来源页面:** 首页(`/`)、`/payments`、`/pricing`、`dashboard.stripe.com/register/payments`。
 
-### Surface
-- **Canvas** (`{colors.canvas}` — `#ffffff`): Default page background.
-- **Canvas Soft** (`{colors.canvas-soft}` — `#f6f9fc`): Cool-tinted off-white used on feature bands beneath the gradient hero.
-- **Canvas Cream** (`{colors.canvas-cream}` — `#f5e9d4`): Warm cream used as a feature-band fill — the brand's chromatic interlude.
-- **Hairline** (`{colors.hairline}` — `#e3e8ee`): 1px borders on cards and tables.
-- **Hairline Input** (`{colors.hairline-input}` — `#a8c3de`): Slightly cooler hairline used on form inputs.
+### 品牌与强调色
+- **靛蓝**(`{colors.primary}` — `#533afd`):品牌标志性 CTA 色。实心药丸按钮、链接强调、渐变锚点。
+- **深靛蓝**(`{colors.primary-deep}` — `#4434d4`):更深的靛蓝,用于渐变中间节点,也是按压态的更暖替代。
+- **靛蓝按压态**(`{colors.primary-press}` — `#2e2b8c`):主色的按压态加深。
+- **浅靛蓝**(`{colors.primary-soft}` — `#665efd`):较亮的靛蓝,用于产品 UI 强调和图表高亮。
+- **弱化靛蓝**(`{colors.primary-bg-subdued-hover}` — `#b9b9f9`):苍白靛蓝填充,用作柔和标签背景。
+- **品牌深色 900**(`{colors.brand-dark-900}` — `#1c1e54`):深海军蓝,用于精选定价档与仪表盘外壳。
+- **红宝石**(`{colors.ruby}` — `#ea2261`):渐变强调与图表高亮;绝不做按钮。
+- **品红**(`{colors.magenta}` — `#f96bee`):渐变网格中更亮的粉色节点。
+- **柠檬**(`{colors.lemon}` — `#9b6829`):渐变背景中的暖雪柑节点。
 
-### Text
-- **Ink** (`{colors.ink}` — `#0d253d`): Default body text color across the brand. Deep navy, never pure black.
-- **Ink Secondary** (`{colors.ink-secondary}` — `#273951`): Secondary text on white.
-- **Ink Mute** (`{colors.ink-mute}` — `#64748d`): Helper text, captions, table labels.
-- **Ink Mute 2** (`{colors.ink-mute-2}` — `#61718a`): Near-equivalent to ink-mute used in nav.
-- **On Primary** (`{colors.on-primary}` — `#ffffff`): Text on indigo / dark-navy surfaces.
+### 表面
+- **画布**(`{colors.canvas}` — `#ffffff`):默认页面背景。
+- **柔和画布**(`{colors.canvas-soft}` — `#f6f9fc`):冷调灰白,用于渐变 Hero 下方的特性区块。
+- **奶油画布**(`{colors.canvas-cream}` — `#f5e9d4`):暖奶油色,用作特性区块填充——品牌的色彩间奏。
+- **发丝线**(`{colors.hairline}` — `#e3e8ee`):卡片与表格的 1px 边框。
+- **输入框发丝线**(`{colors.hairline-input}` — `#a8c3de`):表单输入框上略冷的发丝线。
 
-### Semantic
-The brand does not use a separate semantic color palette in the marketing system — error / success states live in dashboard-product UI specifically.
+### 文字
+- **墨色**(`{colors.ink}` — `#0d253d`):全品牌默认正文色。深海军蓝,从不用纯黑。
+- **次要墨色**(`{colors.ink-secondary}` — `#273951`):白底上的次要文字。
+- **弱化墨色**(`{colors.ink-mute}` — `#64748d`):辅助文字、说明、表格标签。
+- **弱化墨色 2**(`{colors.ink-mute-2}` — `#61718a`):导航中使用的近似 ink-mute 色。
+- **主色上的文字**(`{colors.on-primary}` — `#ffffff`):靛蓝 / 深海军蓝表面上的文字。
 
-## Typography
+### 语义色
+营销系统中品牌不使用独立的语义色板——错误 / 成功状态只存在于仪表盘产品 UI 中。
 
-### Font Family
+## 字体(Typography)
 
-The display and UI tier is **Sohne** (proprietary, licensed from Klim Type Foundry) at weights 300 (thin) and 400 (regular). The variable font (`sohne-var`) is loaded with `font-feature-settings: "ss01"` enabled globally — the stylistic set substitutes a single-story `a` and other character variants that are part of the brand's typographic signature.
+### 字体族
 
-When Sohne is unavailable, fall back to **SF Pro Display** at thin weights, then system-ui. For maximum brand fidelity, **Inter** (open-source) at weight 300 with `font-feature-settings: "ss01"` and `letter-spacing: -1.4px` on display sizes approximates the rhythm closely.
+展示与 UI 层级使用 **Sohne**(专有字体,授权自 Klim Type Foundry),字重 300(细体)与 400(常规)。可变字体(`sohne-var`)以 `font-feature-settings: "ss01"` 全局加载——该风格集替换单层 `a` 等字符变体,是品牌字体签名的一部分。
 
-### Hierarchy
+Sohne 不可用时,回退到细字重的 **SF Pro Display**,再退到 system-ui。追求最大品牌保真度时,开源的 **Inter**(字重 300,启用 `font-feature-settings: "ss01"`,展示字号加 `letter-spacing: -1.4px`)能很接近地还原其节奏。
 
-| Token | Size | Weight | Line Height | Letter Spacing | Use |
+### 层级(Hierarchy)
+
+| Token | Size | Weight | Line Height | Letter Spacing | 用途 |
 |---|---|---|---|---|---|
-| `{typography.display-xxl}` | 56px | 300 | 1.03 | -1.4px | Hero headline |
-| `{typography.display-xl}` | 48px | 300 | 1.15 | -0.96px | Section opener |
-| `{typography.display-lg}` | 32px | 300 | 1.1 | -0.64px | Card title / sub-section |
-| `{typography.display-md}` | 26px | 300 | 1.12 | -0.26px | Compact card title |
-| `{typography.heading-lg}` | 22px | 300 | 1.1 | -0.22px | Pricing tier name |
-| `{typography.heading-md}` | 20px | 300 | 1.4 | -0.2px | Section sub-heading |
-| `{typography.heading-sm}` | 18px | 300 | 1.4 | 0 | Mini-section label |
-| `{typography.body-lg}` | 16px | 300 | 1.4 | 0 | Marketing body lead |
-| `{typography.body-md}` | 15px | 300 | 1.4 | 0 | Default UI body |
-| `{typography.body-tabular}` | 14px | 300 | 1.4 | -0.42px | Money / numeric tables (uses `tnum`) |
-| `{typography.button-md}` | 16px | 400 | 1.0 | 0 | Pill button label |
-| `{typography.button-sm}` | 14px | 400 | 1.0 | 0 | Compact pill label |
-| `{typography.caption}` | 13px | 400 | 1.4 | -0.39px | Helper, table labels |
-| `{typography.micro}` | 11px | 300 | 1.4 | 0 | Fine print |
-| `{typography.micro-cap}` | 10px | 400 | 1.15 | 0.1px | All-caps eyebrow |
+| `{typography.display-xxl}` | 56px | 300 | 1.03 | -1.4px | Hero 标题 |
+| `{typography.display-xl}` | 48px | 300 | 1.15 | -0.96px | 区块开场 |
+| `{typography.display-lg}` | 32px | 300 | 1.1 | -0.64px | 卡片标题 / 子区块 |
+| `{typography.display-md}` | 26px | 300 | 1.12 | -0.26px | 紧凑卡片标题 |
+| `{typography.heading-lg}` | 22px | 300 | 1.1 | -0.22px | 定价档位名 |
+| `{typography.heading-md}` | 20px | 300 | 1.4 | -0.2px | 区块副标题 |
+| `{typography.heading-sm}` | 18px | 300 | 1.4 | 0 | 迷你区块标签 |
+| `{typography.body-lg}` | 16px | 300 | 1.4 | 0 | 营销正文导语 |
+| `{typography.body-md}` | 15px | 300 | 1.4 | 0 | 默认 UI 正文 |
+| `{typography.body-tabular}` | 14px | 300 | 1.4 | -0.42px | 金额 / 数字表格(启用 `tnum`) |
+| `{typography.button-md}` | 16px | 400 | 1.0 | 0 | 药丸按钮标签 |
+| `{typography.button-sm}` | 14px | 400 | 1.0 | 0 | 紧凑药丸标签 |
+| `{typography.caption}` | 13px | 400 | 1.4 | -0.39px | 辅助文字、表格标签 |
+| `{typography.micro}` | 11px | 300 | 1.4 | 0 | 细则 |
+| `{typography.micro-cap}` | 10px | 400 | 1.15 | 0.1px | 全大写眉题 |
 
-### Principles
-- **Thin weight is the brand.** Display tiers always render at weight 300. Bumping to 400+ removes the brand's editorial air.
-- **Negative tracking on display.** -1.4px at 56px, scaling proportionally down to -0.2px at 20px. The negative tracking is the brand's typographic signature.
-- **Tabular figures for money.** Any cell rendering currency, transaction amounts, or numeric counts uses `font-feature-settings: "tnum"` plus a tightening tracking. The brand quietly signals its financial DNA through this micro-detail.
-- **`ss01` globally.** Apply `font-feature-settings: "ss01"` to the body element so the stylistic-set substitution is on for every text role.
+### 原则(Principles)
+- **细体就是品牌。** 展示层级一律以字重 300 渲染。提到 400+ 会毁掉品牌的编辑气质。
+- **展示字号负字距。** 56px 处 -1.4px,按比例递减到 20px 处 -0.2px。负字距是品牌的字体签名。
+- **金额用表格数字。** 任何渲染货币、交易金额或数字计数的单元格都使用 `font-feature-settings: "tnum"` 加收紧字距。品牌通过这个微细节安静地宣示自己的金融基因。
+- **全局 `ss01`。** 在 body 元素上应用 `font-feature-settings: "ss01"`,让风格集替换对所有文字角色生效。
 
-### Note on Font Substitutes
-Sohne is proprietary. Use **Inter** (open-source via Google Fonts) at weight 300 with `letter-spacing: -1.4px` and `font-feature-settings: "ss01"` for display tiers — Inter is the closest open-source analogue. For body sizes, Inter at 300 weight with `font-feature-settings: "tnum"` (where applicable) is the canonical substitute. Avoid Helvetica or system-ui defaults — they're heavier than the brand needs.
+### 字体替代说明(Note on Font Substitutes)
+Sohne 为专有字体。展示层级可使用 **Inter**(Google Fonts 开源)字重 300,加 `letter-spacing: -1.4px` 与 `font-feature-settings: "ss01"`——Inter 是最接近的开源近似。正文字号同样用 Inter 300,适用处启用 `font-feature-settings: "tnum"`,这是标准替代。避免 Helvetica 或 system-ui 默认值——它们比品牌需要的更重。
 
 ## Layout
 
@@ -434,23 +438,23 @@ The brand uses **product UI mockups** more than photography. Dashboard composite
 **`footer-light`** — site-wide footer.
 - Background `{colors.canvas}`, text `{colors.ink-mute}`, type `{typography.caption}`, padding `{spacing.huge} {spacing.xl}` (64px 24px). Holds 4–6 columns of link groups, social icons, and a small legal row.
 
-## Do's and Don'ts
+## 应做与禁忌(Do's and Don'ts)
 
-### Do
-- Reserve `{colors.primary}` for filled CTAs and inline link emphasis — it should appear sparingly, one filled button per band.
-- Apply the gradient mesh to every marketing hero; bare-canvas heroes feel off-brand.
-- Render display tiers at weight 300 with negative letter-spacing — the thin tracking is the typographic signature.
-- Use `font-feature-settings: "tnum"` on every money / numeric cell.
-- Apply `font-feature-settings: "ss01"` globally on the body element.
-- Pair every feature explanation with a composited product UI mockup; the brand's argument is "look at the actual product."
+### 应做(Do)
+- 把 `{colors.primary}` 留给实心 CTA 和行内链接强调——它应当克制出现,每个区块一个实心按钮。
+- 每个营销 Hero 都应用渐变网格;裸画布 Hero 会显得脱离品牌。
+- 展示层级以字重 300 加负字距渲染——细体字距就是字体签名。
+- 每个金额 / 数字单元格都启用 `font-feature-settings: "tnum"`。
+- 在 body 元素上全局应用 `font-feature-settings: "ss01"`。
+- 每段特性说明都配一张合成产品 UI 模型图;品牌的论据就是"看真实产品"。
 
-### Don't
-- Don't bump display weight above 300 — at 400 the brand's editorial air collapses.
-- Don't add new accent colors outside the documented gradient stops (cream / orange / lavender / indigo / ruby / magenta).
-- Don't use the indigo `{colors.primary}` as a body-text color — it's a CTA and link color, not a type color at body size.
-- Don't shrink button padding below `8px 16px` — the tight pill is part of the brand's transactional feel.
-- Don't render money cells without `tnum` — it breaks the quiet financial-data signature.
-- Don't replace the pill shape with rounded-rectangles for buttons.
+### 禁忌(Don't)
+- 不要把展示字重提到 300 以上——到 400 品牌的编辑气质就塌了。
+- 不要添加文档化渐变节点(奶油 / 橙 / 薰衣草 / 靛蓝 / 红宝石 / 品红)之外的新强调色。
+- 不要把靛蓝 `{colors.primary}` 当正文字色——它是 CTA 和链接色,不是正文尺寸的字体色。
+- 不要把按钮内边距压到 `8px 16px` 以下——紧凑药丸是品牌交易感的一部分。
+- 不要渲染没有 `tnum` 的金额单元格——那会破坏安静的金融数据签名。
+- 不要用圆角矩形替代按钮的药丸形。
 
 ## Responsive Behavior
 

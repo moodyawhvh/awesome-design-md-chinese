@@ -390,101 +390,105 @@ components:
 ---
 
 
-## Overview
+> 🌐 本文档由 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 翻译,英文原版见原项目。
+>
+> ⚠️ 本文件超过 10000 字符,仅汉化核心章节(概览 / 色彩 / 字体 / 禁忌清单);布局、组件、响应式等其余章节保留英文原版,请对照原项目阅读。
 
-Vercel is a developer-platform brand — the page is a deployment dashboard's marketing surface, written for engineers who already know the syntax. It earns that posture with one of the cleanest stark systems on the web: near-white `{colors.canvas-soft}` body background, ink-near-black `{colors.ink}` text, a 200-step gray scale that gives every divider, border, and disabled state its own deliberate step. The only place the brand introduces colour at marketing scale is the multi-stop mesh gradient (`{colors.gradient-develop-start}` → `{colors.gradient-preview-end}` → `{colors.gradient-ship-start}` → cyan / magenta / amber) that floats in atmospheric backdrops, never miniaturised to a swatch. That gradient is the entire decoration system.
+## 概览(Overview)
 
-Type is the second decisive voice. The brand's own custom geometric sans (Geist) carries display, body, button — everything narrative — at weight 600 for display, 500 for buttons, 400 for body. A matching monospaced face (Geist Mono) carries technical labels: terminal mockups, code blocks, sometimes filename captions. Headlines are sentence-case with aggressive negative letter-spacing (`-2.4px` at 48 px hero) — the brand never letter-spaces positively, never goes uppercase outside of mono labels.
+Vercel 是一个开发者平台品牌——整个页面就是部署仪表盘的营销化呈现,写给已经熟悉这些语法的工程师。它用全网最干净利落的硬朗系统撑起这种气质:近白的 `{colors.canvas-soft}` 页面背景、近黑墨色 `{colors.ink}` 文字,以及一套 200 级灰阶,让每一条分隔线、每一道边框、每一个禁用态都有自己明确的层级。品牌唯一在营销尺度上引入色彩的地方,是多段网格式渐变(`{colors.gradient-develop-start}` → `{colors.gradient-preview-end}` → `{colors.gradient-ship-start}` → 青 / 品红 / 琥珀),它以氛围背景的形式漂浮,从不缩小成色板。这个渐变就是整套装饰系统。
 
-Surfaces use a four-step ladder: `{colors.canvas}` (pure white for cards), `{colors.canvas-soft}` 98% (the page body), `{colors.canvas-soft-2}` 95% (occasional inset region), `{colors.primary}` (the deep ink-near-black used as the polarity-flipped band when a section needs the dark mode treatment). Shadows are exceptionally subtle — every elevated card carries a stacked shadow built from `0px 1px 1px #00000005` + `0px 2px 2px #0000000a` + an inset border. Cards never float on heavy drop-shadow; they sit on the page held by hairline + soft glow.
+字体是第二个决定性的声音。品牌自研的几何无衬线体(Geist)承担展示、正文、按钮——一切叙事性文字——展示字重 600、按钮 500、正文 400。配套的等宽字体(Geist Mono)承担技术标签:终端模型图、代码块,偶尔还有文件名说明。标题使用句首大写 + 激进的负字距(48px Hero 处为 `-2.4px`)——品牌从不使用正字距,除等宽标签外也从不大写。
 
-**Key Characteristics:**
-- A single black-ink primary CTA `{colors.primary}` carries every conversion target, paired with white-on-white `button-secondary` for the secondary action. The brand uses 100 px pill shape for marketing CTAs and a tight 6 px square shape for in-app nav buttons.
-- A multi-stop mesh gradient (cyan-blue-magenta-amber) is the only decorative chrome — used at hero scale and inside feature-band atmospheric backdrops. It is the brand.
-- Every section eyebrow and small label uses the monospace face `{typography.caption-mono}` or `{typography.code}`; everything else is in the geometric sans.
-- Subtle stacked-shadow elevation — three offsets layered with 4-12 % black opacity — never a single heavy drop-shadow.
-- A complete 100–1000 gray + blue + red + amber + green + teal + purple + pink colour scale exists as a system token set, but the marketing surface uses only the `100`, `1000`, and `700`-level tones; the rest stay in the design-system tokens for in-product surfaces.
-- An "Active CPU" pricing rhythm: `pricing-card` lays out 3-up on the pricing page with `pricing-card-featured` (Pro tier) polarity-flipped to `{colors.primary}` against white-card siblings.
+表面采用四级阶梯:`{colors.canvas}`(卡片用纯白)、`{colors.canvas-soft}` 98%(页面主体)、`{colors.canvas-soft-2}` 95%(偶发的内嵌区域)、`{colors.primary}`(深墨近黑,在区块需要暗色处理时作为极性翻转色带)。阴影极其克制——每张浮起卡片都携带由 `0px 1px 1px #00000005` + `0px 2px 2px #0000000a` + 内嵌边框叠加而成的堆叠阴影。卡片从不悬浮在厚重的投影上;它们靠发丝线和柔光贴在页面上。
 
-## Colors
+**关键特征:**
+- 单一的墨黑主 CTA `{colors.primary}` 承担所有转化目标,搭配白底白边的 `button-secondary` 作为次要动作。营销 CTA 用 100px 药丸形,应用内导航按钮用紧凑的 6px 直角方形。
+- 多段网格渐变(青-蓝-品红-琥珀)是唯一的装饰元素——用于 Hero 尺度和特性区块的氛围背景。它就是品牌本身。
+- 所有区块眉题和小标签使用等宽字体 `{typography.caption-mono}` 或 `{typography.code}`;其余一切都是几何无衬线。
+- 克制的堆叠阴影层级——三个偏移量以 4-12% 黑色透明度分层——从不用单一厚重投影。
+- 完整的 100–1000 灰 + 蓝 + 红 + 琥珀 + 绿 + 青 + 紫 + 粉色阶作为系统令牌存在,但营销表面只用 `100`、`1000` 和 `700` 级色调;其余保留给产品内界面的设计系统令牌。
+- "Active CPU" 定价节奏:`pricing-card` 在定价页 3 列排布,`pricing-card-featured`(Pro 档)极性翻转为 `{colors.primary}`,与白色卡片兄弟形成对照。
 
-### Brand & Accent
-- **Ink** (`{colors.primary}` — `#171717`): The single primary CTA color. Black-near-pure ink that carries every Sign Up pill, every footer CTA, the dark-band polarity-flip. Used as text color throughout the page on light surfaces. (Resolved from `--ds-gray-1000`.)
-- **Cyan** (`{colors.cyan}` — `#50e3c2`): A signature mint-cyan used in the brand gradient and inside Geist-system spotlight tokens. Visible inside the hero gradient stops.
-- **Highlight Pink** (`{colors.highlight-pink}` — `#ff0080`): The brand's highlight magenta, used as the high-saturation stop in the preview-gradient pair.
-- **Violet** (`{colors.violet}` — `#7928ca`): The deep purple used as the start of the preview-gradient and inside developer-console highlights.
-- **Link Blue** (`{colors.link}` — `#0070f3`): The brand's primary link color and the legacy `--geist-success` semantic.
+## 色彩(Colors)
 
-### Surface
-- **Canvas** (`{colors.canvas}` — `#ffffff`): The pure-white card / dialog / modal surface.
-- **Canvas Soft** (`{colors.canvas-soft}` — `#fafafa`): The default page background — 98 % white. Almost every section sits on this tone.
-- **Canvas Soft 2** (`{colors.canvas-soft-2}` — `#f5f5f5`): A slightly deeper inset surface for "code editor inner background", template-card hover states, and dropdown menus.
-- **Hairline** (`{colors.hairline}` — `#ebebeb`): 1 px dividers — table rows, card borders, input borders.
-- **Hairline Strong** (`{colors.hairline-strong}` — `#a1a1a1`): The 500-level gray, used as the slightly-stronger divider on light bands and as the deemphasised text color.
+### 品牌与强调色
+- **墨色**(`{colors.primary}` — `#171717`):唯一的主 CTA 色。近纯黑的墨色,承担每一个 Sign Up 药丸按钮、每一个页脚 CTA、暗色区块的极性翻转。在浅色表面上同时作为全页文字色。(源自 `--ds-gray-1000`。)
+- **青色**(`{colors.cyan}` — `#50e3c2`):标志性薄荷青,用于品牌渐变和 Geist 体系的聚光令牌,在 Hero 渐变节点中可见。
+- **高亮粉**(`{colors.highlight-pink}` — `#ff0080`):品牌的高亮品红,作为 preview 渐变对中的高饱和节点。
+- **紫罗兰**(`{colors.violet}` — `#7928ca`):深紫,作为 preview 渐变的起点,也用于开发者控制台高亮。
+- **链接蓝**(`{colors.link}` — `#0070f3`):品牌主链接色,兼作旧版 `--geist-success` 语义色。
 
-### Text
-- **Ink** (`{colors.ink}` — `#171717`): Every heading and body paragraph on light surfaces.
-- **Body** (`{colors.body}` — `#4d4d4d`): Secondary text — sub-headings, body captions, nav-link inactive text, footer column body.
-- **Mute** (`{colors.mute}` — `#888888`): Lowest-priority text — placeholder text, fine print, low-key labels.
-- **On Primary** (`{colors.on-primary}` — `#ffffff`): All text on `{colors.primary}` surfaces.
+### 表面
+- **画布**(`{colors.canvas}` — `#ffffff`):纯白的卡片 / 对话框 / 弹窗表面。
+- **柔和画布**(`{colors.canvas-soft}` — `#fafafa`):默认页面背景——98% 白。几乎所有区块都坐在这个色调上。
+- **柔和画布 2**(`{colors.canvas-soft-2}` — `#f5f5f5`):略深的内嵌表面,用于"代码编辑器内部背景"、模板卡片悬停态和下拉菜单。
+- **发丝线**(`{colors.hairline}` — `#ebebeb`):1px 分隔线——表格行、卡片边框、输入框边框。
+- **加重发丝线**(`{colors.hairline-strong}` — `#a1a1a1`):500 级灰,用于浅色区块上略强的分隔线和弱化文字。
 
-### Semantic
-- **Success / Link** (`{colors.success}` — `#0070f3`): The brand's legacy success indicator doubles as the primary link color. Visible underline-on-hover for inline body links.
-- **Link Deep** (`{colors.link-deep}` — `#0761d1`): The pressed / visited tone for inline links.
-- **Link Bg Soft** (`{colors.link-bg-soft}` — `#d3e5ff`): Soft pastel blue fill for "what's new" pill banners and informational badges.
-- **Error** (`{colors.error}` — `#ee0000`): Validation red for destructive actions and form errors.
-- **Error Soft** (`{colors.error-soft}` — `#f7d4d6`): Soft pastel red for destructive-state backgrounds.
-- **Error Deep** (`{colors.error-deep}` — `#c50000`): Pressed / deep destructive state.
-- **Warning** (`{colors.warning}` — `#f5a623`): Caution / pending status indicator.
-- **Warning Soft** (`{colors.warning-soft}` — `#ffefcf`) / **Warning Deep** (`{colors.warning-deep}` — `#ab570a`): Background + pressed variants.
+### 文字
+- **墨色**(`{colors.ink}` — `#171717`):浅色表面上的所有标题与正文段落。
+- **正文**(`{colors.body}` — `#4d4d4d`):次要文字——副标题、正文说明、导航链接未激活态、页脚栏目正文。
+- **弱化**(`{colors.mute}` — `#888888`):最低优先级文字——占位符、细则、低调标签。
+- **主色上的文字**(`{colors.on-primary}` — `#ffffff`):`{colors.primary}` 表面上的所有文字。
 
-### Brand Gradient
-The brand's signature decoration is a three-pair gradient stack:
-- **Develop** (`{colors.gradient-develop-start}` `#007cf0` → `{colors.gradient-develop-end}` `#00dfd8`) — the blue-to-teal pair used to mark the "deploy" / "develop" rhythm.
-- **Preview** (`{colors.gradient-preview-start}` `#7928ca` → `{colors.gradient-preview-end}` `#ff0080`) — the violet-to-pink pair used for "preview" surfaces.
-- **Ship** (`{colors.gradient-ship-start}` `#ff4d4d` → `{colors.gradient-ship-end}` `#f9cb28`) — the coral-to-amber pair used for "ship" surfaces.
+### 语义色
+- **成功 / 链接**(`{colors.success}` — `#0070f3`):品牌旧版成功指示色,兼作主链接色。行内正文链接悬停时显示下划线。
+- **深链接**(`{colors.link-deep}` — `#0761d1`):行内链接的按压 / 已访问色调。
+- **链接柔底**(`{colors.link-bg-soft}` — `#d3e5ff`):柔和粉蓝填充,用于"新功能"药丸横幅和信息徽章。
+- **错误**(`{colors.error}` — `#ee0000`):破坏性操作与表单错误的校验红。
+- **错误柔色**(`{colors.error-soft}` — `#f7d4d6`):破坏性状态的柔和粉红背景。
+- **错误深色**(`{colors.error-deep}` — `#c50000`):按压 / 深度破坏性状态。
+- **警告**(`{colors.warning}` — `#f5a623`):注意 / 等待状态指示。
+- **警告柔色**(`{colors.warning-soft}` — `#ffefcf`)/ **警告深色**(`{colors.warning-deep}` — `#ab570a`):背景与按压变体。
 
-The three pairs collapse into a single multi-color mesh gradient when used as the hero atmospheric backdrop. Treat the gradient as one unified object — do not crop down to a single colour, do not reorder the stops, and do not miniaturise. Used at hero scale only.
+### 品牌渐变
+品牌的标志性装饰是一组三对渐变:
+- **Develop**(`{colors.gradient-develop-start}` `#007cf0` → `{colors.gradient-develop-end}` `#00dfd8`)——蓝到青绿,标记"部署 / 开发"节奏。
+- **Preview**(`{colors.gradient-preview-start}` `#7928ca` → `{colors.gradient-preview-end}` `#ff0080`)——紫到粉,用于"预览"表面。
+- **Ship**(`{colors.gradient-ship-start}` `#ff4d4d` → `{colors.gradient-ship-end}` `#f9cb28`)——珊瑚到琥珀,用于"上线"表面。
 
-## Typography
+三对渐变在 Hero 氛围背景中融合为单一的多色网格渐变。把渐变当作一个统一对象对待——不要裁剪成单色,不要重排节点,也不要缩小。仅限 Hero 尺度使用。
 
-### Font Family
-Two custom faces carry the entire system:
+## 字体(Typography)
 
-1. **A custom geometric sans** (extracted as `Geist`) for every display, body, button, link, and label. Weights 400 / 500 / 600 are the working set; the face never appears in 700 or heavier. Display sizes are tracked aggressively negative (`-2.4 px` at 48 px hero, `-1.28 px` at 32 px section); body stays at neutral or slightly-negative tracking.
-2. **A custom monospaced face** (extracted as `Geist Mono`) for terminal mockups, code blocks, and small mono-caption labels — anything that wants to signal "technical." Weight 400 only at 12 – 13 px. Tracking neutral.
+### 字体族
+两套自研字体撑起整个系统:
 
-A condensed display sans (`Space Grotesk`) is loaded as a third face for occasional editorial moments but does not render as the primary face anywhere in the captured surfaces.
+1. **自定义几何无衬线体**(提取名 `Geist`)用于所有展示、正文、按钮、链接和标签。工作字重为 400 / 500 / 600;该字体从不出现在 700 或更重的字重。展示字号使用激进的负字距(48px Hero 处 `-2.4px`,32px 区块标题处 `-1.28px`);正文保持中性或轻微负字距。
+2. **自定义等宽字体**(提取名 `Geist Mono`)用于终端模型图、代码块和小号等宽说明标签——一切想传达"技术感"的地方。仅 400 字重,12–13px。字距中性。
 
-### Hierarchy
+一款窄体展示无衬线(`Space Grotesk`)作为第三字体加载,用于偶尔的编辑式时刻,但在采集到的表面中从未作为主字体渲染。
 
-| Token | Size | Weight | Line Height | Letter Spacing | Use |
+### 层级(Hierarchy)
+
+| Token | Size | Weight | Line Height | Letter Spacing | 用途 |
 |---|---|---|---|---|---|
-| `{typography.display-xl}` | 48px | 600 | 48px | -2.4px | Hero headline ("Build and deploy on the AI Cloud."). |
-| `{typography.display-lg}` | 32px | 600 | 40px | -1.28px | Section headlines ("Your frontend, delivered.", "A compute model for all workloads."). |
-| `{typography.display-md}` | 24px | 600 | 32px | -0.96px | Card-cluster headlines, pricing-tier names. |
-| `{typography.display-sm}` | 20px | 600 | 28px | -0.6px | Inline display micro-headings. |
-| `{typography.body-lg}` | 18px | 400 | 28px | 0 | Lead paragraphs under section headlines. |
-| `{typography.body-md}` | 16px | 400 | 24px | 0 | Default body paragraph. |
-| `{typography.body-md-strong}` | 16px | 500 | 24px | 0 | Bolded inline body. |
-| `{typography.body-sm}` | 14px | 400 | 20px | -0.28px | Secondary body, nav-link text, button-md labels. |
-| `{typography.body-sm-strong}` | 14px | 500 | 20px | -0.28px | Nav CTA labels, table-row emphasis. |
-| `{typography.caption}` | 12px | 400 | 16px | 0 | Footer secondary lines, badge labels. |
-| `{typography.caption-mono}` | 12px | 400 | 16px | 0 | Section eyebrows and label captions that want a technical voice. |
-| `{typography.code}` | 13px | 400 | 20px | 0 | Inline code, terminal mockups, command snippets. |
-| `{typography.button-md}` | 14px | 500 | 20px | 0 | Small / nav-scale button labels. |
-| `{typography.button-lg}` | 16px | 500 | 24px | 0 | Marketing-scale pill button labels. |
+| `{typography.display-xl}` | 48px | 600 | 48px | -2.4px | Hero 标题("Build and deploy on the AI Cloud.")。 |
+| `{typography.display-lg}` | 32px | 600 | 40px | -1.28px | 区块标题("Your frontend, delivered."、"A compute model for all workloads.")。 |
+| `{typography.display-md}` | 24px | 600 | 32px | -0.96px | 卡片组标题、定价档位名。 |
+| `{typography.display-sm}` | 20px | 600 | 28px | -0.6px | 行内展示微标题。 |
+| `{typography.body-lg}` | 18px | 400 | 28px | 0 | 区块标题下的导语段落。 |
+| `{typography.body-md}` | 16px | 400 | 24px | 0 | 默认正文段落。 |
+| `{typography.body-md-strong}` | 16px | 500 | 24px | 0 | 加粗行内正文。 |
+| `{typography.body-sm}` | 14px | 400 | 20px | -0.28px | 次要正文、导航链接文字、按钮 md 标签。 |
+| `{typography.body-sm-strong}` | 14px | 500 | 20px | -0.28px | 导航 CTA 标签、表格行强调。 |
+| `{typography.caption}` | 12px | 400 | 16px | 0 | 页脚次要行、徽章标签。 |
+| `{typography.caption-mono}` | 12px | 400 | 16px | 0 | 想要技术声线的区块眉题与标签说明。 |
+| `{typography.code}` | 13px | 400 | 20px | 0 | 行内代码、终端模型图、命令片段。 |
+| `{typography.button-md}` | 14px | 500 | 20px | 0 | 小型 / 导航尺度按钮标签。 |
+| `{typography.button-lg}` | 16px | 500 | 24px | 0 | 营销尺度药丸按钮标签。 |
 
-### Principles
-- **Negative tracking is part of the voice.** Display sizes use aggressive `-2.4` to `-0.6` px tracking. Reverting to default tracking breaks the brand.
-- **Sentence-case headlines, period-terminated.** Headlines like "Build and deploy on the AI Cloud." end with a deliberate period — that punctuation is part of the brand's voice.
-- **Mono for the technical layer only.** Section eyebrows, code blocks, terminal mockups. Body paragraphs never set in mono.
-- **Weight 600 is the display ceiling.** The geometric sans never appears at 700 / 800. The brand reads as a calmer system because of this.
+### 原则(Principles)
+- **负字距是声音的一部分。** 展示字号使用激进的 `-2.4` 至 `-0.6` px 字距。改回默认字距会毁掉品牌感。
+- **句首大写标题,句号收尾。** 像 "Build and deploy on the AI Cloud." 这样的标题以一个刻意的句号结束——这个标点是品牌声音的一部分。
+- **等宽只用于技术层。** 区块眉题、代码块、终端模型图。正文段落绝不用等宽。
+- **600 是展示字重天花板。** 几何无衬线从不出现在 700 / 800。正因如此,品牌读起来更沉静。
 
-### Note on Font Substitutes
-The two primary faces are proprietary (custom-cut for the brand). Open-source substitutes:
-- **Geometric sans** — *Inter* (400 / 500 / 600) is the closest stylistic match; `font-feature-settings: "ss01", "ss02"` enables the geometric alternates. *Satoshi* is a passable second choice.
-- **Monospace** — *JetBrains Mono* (400) at 12 – 13 px matches the technical voice. *IBM Plex Mono* is the second-best option.
+### 字体替代说明(Note on Font Substitutes)
+两套主字体均为专有(为品牌定制裁切)。开源替代:
+- **几何无衬线** — *Inter*(400 / 500 / 600)是风格上最接近的匹配;`font-feature-settings: "ss01", "ss02"` 可启用几何替换字形。*Satoshi* 是可接受的第二选择。
+- **等宽** — *JetBrains Mono*(400)在 12–13px 下匹配技术声线。*IBM Plex Mono* 是次优选择。
 
 ## Layout
 
@@ -715,22 +719,22 @@ The brand uses STACKED shadows — multiple small offsets layered to fake natura
 - Properties: `backgroundColor`, `rounded`, `padding`, `typography`
 
 
-## Do's and Don'ts
+## 应做与禁忌(Do's and Don'ts)
 
-### Do
-- Reserve `{colors.primary}` (`#171717`) for primary CTAs across the page. Black ink IS the conversion target.
-- Use `{rounded.pill}` 100 px for every marketing-scale CTA and `{rounded.sm}` 6 px for nav-scale buttons. The two pill scales coexist deliberately.
-- Set every headline in `{typography.display-*}` weight 600, sentence-case, often period-terminated. Aggressive negative tracking is part of the voice.
-- Use the brand mesh gradient as atmospheric decoration at hero scale only — never miniaturise it to an icon, never reduce to a single colour.
-- Layer stacked shadows (multiple small offsets with inset hairline) rather than single heavy drops. The brand's elevation is calmer than Material.
-- Cycle page surfaces in `{colors.canvas-soft}` → `{colors.canvas}` → `{colors.primary}` polarity-flipped bands; the dark band IS the depth cue.
-- Set every code block and technical eyebrow in `{typography.code}` / `{typography.caption-mono}`. Mono is the voice of the platform.
+### 应做(Do)
+- 把 `{colors.primary}`(`#171717`)留给全页的主 CTA。墨黑本身就是转化目标。
+- 营销尺度的 CTA 一律用 `{rounded.pill}` 100px,导航尺度按钮用 `{rounded.sm}` 6px。两种药丸尺度刻意共存。
+- 所有标题用 `{typography.display-*}` 字重 600、句首大写,常以句号收尾。激进的负字距是声音的一部分。
+- 品牌网格渐变只作 Hero 尺度的氛围装饰——绝不缩成图标,绝不简化成单色。
+- 用堆叠阴影(多个小偏移 + 内嵌发丝环)而非单一厚重投影。品牌的层级感比 Material 更沉静。
+- 让页面表面在 `{colors.canvas-soft}` → `{colors.canvas}` → `{colors.primary}` 极性翻转色带间轮转;暗色区块就是深度线索。
+- 所有代码块和技术眉题用 `{typography.code}` / `{typography.caption-mono}`。等宽是平台的声线。
 
-### Don't
-- Don't introduce a sixth accent colour. The brand operates with ink + gray + the four-pair gradient palette; new accents flatten the voice.
-- Don't render headlines in all-caps. Sentence-case + negative tracking is non-negotiable.
-- Don't drop a single heavy drop-shadow on cards. The brand's elevation is built from stacked small offsets + inset hairline rings.
-- Don't render the brand gradient at icon scale or in a single-colour reduced form. The gradient lives at hero scale only.
-- Don't promote the geometric sans to weight 700. The brand's display ceiling is 600.
-- Don't pair the marketing 100-px pill CTA shape with the 6-px nav radius on the same screen — pick a scale and stay there.
-- Don't set body paragraphs in the mono face. The mono is for code + technical labels only.
+### 禁忌(Don't)
+- 不要引入第六种强调色。品牌靠墨色 + 灰阶 + 四对渐变色板运转;新的强调色会压平声音。
+- 不要全大写渲染标题。句首大写 + 负字距没有商量余地。
+- 不要给卡片压单一厚重投影。品牌的层级感由堆叠小偏移 + 内嵌发丝环构成。
+- 不要把品牌渐变渲染成图标尺度或单色简化形态。渐变只活在 Hero 尺度。
+- 不要把几何无衬线推到字重 700。品牌展示字重天花板是 600。
+- 不要在同一屏混用营销 100px 药丸 CTA 和 6px 导航圆角——选定一个尺度并保持。
+- 不要用等宽字体排正文段落。等宽只属于代码和技术标签。
