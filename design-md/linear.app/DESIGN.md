@@ -255,96 +255,100 @@ components:
     padding: 64px 32px
 ---
 
-## Overview
+> 🌐 本文档由 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 翻译,英文原版见原项目。
+>
+> ⚠️ 本文件超过 10000 字符,仅汉化核心章节(概览 / 色彩 / 字体 / 禁忌清单);布局、组件、响应式等其余章节保留英文原版,请对照原项目阅读。
 
-Linear's marketing canvas is the deepest dark surface in this collection — `{colors.canvas}` is #010102, essentially pure black with a faint blue tint. On top sits a four-step surface ladder (`{colors.surface-1}` through `{colors.surface-4}`) for cards, panels, and lifted tiles, with hairline borders running from `{colors.hairline}` (#23252a) up through `{colors.hairline-strong}` and `{colors.hairline-tertiary}`. Light gray text (`{colors.ink}` #f7f8f8) carries the body and headlines.
+## 概览(Overview)
 
-The single chromatic accent is **Linear lavender-blue** `{colors.primary}` (#5e6ad2) — used on the brand mark, focus rings, and the primary CTA button. A lighter hover state (`{colors.primary-hover}` #828fff) and a focus-tinted variant (`{colors.primary-focus}` #5e69d1) extend the same hue. Linear avoids saturated greens, oranges, reds, etc. on the marketing canvas — the only semantic color is `{colors.semantic-success}` (#27a644) for status pills and the rare success indicator.
+Linear 的营销画布是本合集中最深的暗色表面——`{colors.canvas}` 为 #010102,几乎是带一丝蓝调的纯黑。其上是四级表面阶梯(`{colors.surface-1}` 到 `{colors.surface-4}`),承载卡片、面板和浮起磁贴,发丝线边框从 `{colors.hairline}`(#23252a)延伸到 `{colors.hairline-strong}` 和 `{colors.hairline-tertiary}`。浅灰文字(`{colors.ink}` #f7f8f8)承担正文与标题。
 
-Display type runs Linear's custom sans (with `SF Pro Display` fallback) at weight 500–700 with negative letter-spacing scaling from -3.0px at 80px down to 0 at body. The body family is Linear's text cut, and a Linear Mono is reserved for code snippets in product screenshots.
+唯一的彩色强调是 **Linear 薰衣草蓝** `{colors.primary}`(#5e6ad2)——用于品牌标识、焦点环和主 CTA 按钮。更亮的悬停态(`{colors.primary-hover}` #828fff)与焦点着色变体(`{colors.primary-focus}` #5e69d1)延伸同一色相。Linear 在营销画布上回避高饱和的绿、橙、红等——唯一的语义色是 `{colors.semantic-success}`(#27a644),用于状态药丸和罕见的成功指示。
 
-The page rhythm is **dense product screenshots** — Linear's marketing leads with high-fidelity captures of the product UI (issue list, project view, dashboard) framed in `{colors.surface-1}` panels with `{rounded.xl}` 16px corners. The chrome is intentionally minimal so the app screenshots can do the heavy lifting.
+展示字体使用 Linear 自研无衬线(回退 `SF Pro Display`),字重 500–700,负字距从 80px 处的 -3.0px 递减到正文的 0。正文家族是 Linear 的文本裁切版,Linear Mono 保留给产品截图中的代码片段。
 
-**Key Characteristics:**
-- **Dark-canvas marketing system** — `{colors.canvas}` (#010102) is the deepest dark in this collection.
-- **Lavender-blue brand accent** (`{colors.primary}` #5e6ad2) — used scarcely on brand mark, focus, and the primary CTA.
-- Four-step surface ladder (canvas → surface-1 → surface-2 → surface-3 → surface-4) carries hierarchy without shadow.
-- Display tracking pulls aggressively negative (-3.0px at 80px); body holds at -0.05px.
-- Cards use `{rounded.lg}` 12px corners with 1px hairline borders — never pill, rarely 16px.
-- **Product UI screenshots** dominate the page. The marketing chrome is a dark frame for the app.
-- No second chromatic color. No atmospheric gradients. No spotlight cards.
+页面节奏是**高密度产品截图**——Linear 的营销以高保真的产品 UI 截图(issue 列表、项目视图、仪表盘)领衔,装在带 `{rounded.xl}` 16px 圆角的 `{colors.surface-1}` 面板中。页面外壳刻意极简,让应用截图扛起主角。
 
-## Colors
+**关键特征:**
+- **暗色画布营销系统**——`{colors.canvas}`(#010102)是本合集中最深的暗色。
+- **薰衣草蓝品牌强调**(`{colors.primary}` #5e6ad2)——克制地用于品牌标识、焦点态和主 CTA。
+- 四级表面阶梯(canvas → surface-1 → surface-2 → surface-3 → surface-4)在不依赖阴影的情况下承载层级。
+- 展示字距激进地为负(80px 处 -3.0px);正文保持在 -0.05px。
+- 卡片使用 `{rounded.lg}` 12px 圆角加 1px 发丝线边框——绝不用药丸形,很少用 16px。
+- **产品 UI 截图**主导页面。营销外壳只是应用的暗色画框。
+- 没有第二种彩色。没有氛围渐变。没有聚光卡片。
 
-> Source pages: linear.app (home), /intake, /pricing, /contact/sales, /build.
+## 色彩(Colors)
 
-### Brand & Accent
-- **Lavender-Blue** ({colors.primary}): The signature Linear accent — primary CTA, brand mark, link emphasis.
-- **Lavender Hover** ({colors.primary-hover}): Lighter lavender (#828fff) — hovered state of the primary CTA.
-- **Lavender Focus** ({colors.primary-focus}): Focus-ring tint (#5e69d1) — focused inputs, focused buttons.
-- **Brand Secure** ({colors.brand-secure}): Muted lavender-gray (#7a7fad) — used in "Linear Security" surfaces.
+> 来源页面:linear.app(首页)、/intake、/pricing、/contact/sales、/build。
 
-### Surface
-- **Canvas** ({colors.canvas}): Default page background — #010102, near-pure black with a faint blue tint.
-- **Surface 1** ({colors.surface-1}): One step above canvas — feature cards, pricing cards, product screenshot panels.
-- **Surface 2** ({colors.surface-2}): Two steps above — featured pricing card, hovered cards.
-- **Surface 3** ({colors.surface-3}): Three steps above — line-tertiary backgrounds, sub-nav.
-- **Surface 4** ({colors.surface-4}): Four steps above — bg-level-3, deepest lifted surface.
-- **Hairline** ({colors.hairline}): 1px borders on cards and dividers.
-- **Hairline Strong** ({colors.hairline-strong}): Stronger 1px borders — input focus rings.
-- **Hairline Tertiary** ({colors.hairline-tertiary}): Tertiary borders for nested surfaces.
-- **Inverse Canvas** ({colors.inverse-canvas}): Pure white — surface of the inverse pill CTA on a small set of section openers.
-- **Inverse Surface 1** ({colors.inverse-surface-1}): One step above inverse canvas.
-- **Inverse Surface 2** ({colors.inverse-surface-2}): Two steps above inverse canvas.
+### 品牌与强调色
+- **薰衣草蓝**({colors.primary}):Linear 的标志性强调色——主 CTA、品牌标识、链接强调。
+- **薰衣草悬停态**({colors.primary-hover}):更亮的薰衣草(#828fff)——主 CTA 的悬停状态。
+- **薰衣草焦点态**({colors.primary-focus}):焦点环色调(#5e69d1)——聚焦的输入框与按钮。
+- **品牌安全色**({colors.brand-secure}):弱化的薰衣草灰(#7a7fad)——用于"Linear Security"相关表面。
 
-### Text
-- **Ink** ({colors.ink}): All headlines and emphasized body type — light gray #f7f8f8.
-- **Ink Muted** ({colors.ink-muted}): Secondary type at #d0d6e0 — meta info on hero panels.
-- **Ink Subtle** ({colors.ink-subtle}): Tertiary type at #8a8f98 — deselected pricing tabs, footer columns.
-- **Ink Tertiary** ({colors.ink-tertiary}): Quaternary at #62666d — disabled, footnotes.
+### 表面
+- **画布**({colors.canvas}):默认页面背景——#010102,近纯黑带一丝蓝调。
+- **表面 1**({colors.surface-1):比画布高一级——特性卡片、定价卡片、产品截图面板。
+- **表面 2**({colors.surface-2}):高两级——精选定价卡、悬停卡片。
+- **表面 3**({colors.surface-3}):高三级——line-tertiary 背景、子导航。
+- **表面 4**({colors.surface-4}):高四级——bg-level-3,最深的浮起表面。
+- **发丝线**({colors.hairline}):卡片与分隔线的 1px 边框。
+- **加重发丝线**({colors.hairline-strong}):更强的 1px 边框——输入框焦点环。
+- **三级发丝线**({colors.hairline-tertiary):嵌套表面的三级边框。
+- **反转画布**({colors.inverse-canvas}):纯白——少数区块开场中反转药丸 CTA 的表面。
+- **反转表面 1**({colors.inverse-surface-1}):比反转画布高一级。
+- **反转表面 2**({colors.inverse-surface-2}):比反转画布高两级。
 
-### Semantic
-- **Success Green** ({colors.semantic-success}): Status pills, success indicators. The only semantic color on marketing.
-- **Overlay** ({colors.semantic-overlay}): Pure black overlay scrim for modals.
+### 文字
+- **墨色**({colors.ink}):所有标题与强调正文——浅灰 #f7f8f8。
+- **弱化墨色**({colors.ink-muted}):#d0d6e0 的次要文字——Hero 面板上的元信息。
+- **更弱墨色**({colors.ink-subtle}):#8a8f98 的三级文字——未选中的定价页签、页脚栏目。
+- **三级墨色**({colors.ink-tertiary}):#62666d 的四级文字——禁用态、脚注。
 
-## Typography
+### 语义色
+- **成功绿**({colors.semantic-success}):状态药丸、成功指示。营销面上唯一的语义色。
+- **遮罩**({colors.semantic-overlay}):弹窗用的纯黑遮罩层。
 
-### Font Family
+## 字体(Typography)
 
-- **Linear Display** — Linear's custom display sans; fallback `SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto`. Carries display-xl through subhead.
-- **Linear Text** — Linear's custom text sans (a slightly different cut tuned for body sizes); same fallback stack. Carries body sizes, button labels, captions.
-- **Linear Mono** — Linear's custom mono; fallback `ui-monospace, SF Mono, Menlo`. Used for code snippets in product screenshots and for status / ID tokens.
+### 字体族
 
-The marketing surface treats Display and Text as one continuous voice; the family change is silent.
+- **Linear Display** — Linear 自研展示无衬线;回退 `SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto`。承担 display-xl 至 subhead。
+- **Linear Text** — Linear 自研正文无衬线(为正文尺寸微调的另一裁切版);回退栈相同。承担正文尺寸、按钮标签、说明文字。
+- **Linear Mono** — Linear 自研等宽;回退 `ui-monospace, SF Mono, Menlo`。用于产品截图中的代码片段和状态 / ID 令牌。
 
-### Hierarchy
+营销面把 Display 与 Text 视为同一连续声线;字体族的切换是无声的。
 
-| Token | Size | Weight | Line Height | Letter Spacing | Use |
+### 层级(Hierarchy)
+
+| Token | Size | Weight | Line Height | Letter Spacing | 用途 |
 |---|---|---|---|---|---|
-| `{typography.display-xl}` | 80px | 600 | 1.05 | -3.0px | Largest hero headline |
-| `{typography.display-lg}` | 56px | 600 | 1.10 | -1.8px | Section opener headlines |
-| `{typography.display-md}` | 40px | 600 | 1.15 | -1.0px | Sub-section headlines |
-| `{typography.headline}` | 28px | 600 | 1.20 | -0.6px | Pricing tier titles, CTA banner heading |
-| `{typography.card-title}` | 22px | 500 | 1.25 | -0.4px | Feature card title |
-| `{typography.subhead}` | 20px | 400 | 1.40 | -0.2px | Lead body, intro paragraphs |
-| `{typography.body-lg}` | 18px | 400 | 1.50 | -0.1px | Hero subhead, lead paragraphs |
-| `{typography.body}` | 16px | 400 | 1.50 | -0.05px | Default body |
-| `{typography.body-sm}` | 14px | 400 | 1.50 | 0 | Card body, footer columns |
-| `{typography.caption}` | 12px | 400 | 1.40 | 0 | Captions, meta, status |
-| `{typography.button}` | 14px | 500 | 1.20 | 0 | All button labels |
-| `{typography.eyebrow}` | 13px | 500 | 1.30 | 0.4px | Section eyebrow (slight positive tracking) |
-| `{typography.mono}` | 13px | 400 | 1.50 | 0 | Linear Mono for code in product screenshots |
+| `{typography.display-xl}` | 80px | 600 | 1.05 | -3.0px | 最大 Hero 标题 |
+| `{typography.display-lg}` | 56px | 600 | 1.10 | -1.8px | 区块开场标题 |
+| `{typography.display-md}` | 40px | 600 | 1.15 | -1.0px | 子区块标题 |
+| `{typography.headline}` | 28px | 600 | 1.20 | -0.6px | 定价档位标题、CTA 横幅标题 |
+| `{typography.card-title}` | 22px | 500 | 1.25 | -0.4px | 特性卡片标题 |
+| `{typography.subhead}` | 20px | 400 | 1.40 | -0.2px | 导语正文、介绍段落 |
+| `{typography.body-lg}` | 18px | 400 | 1.50 | -0.1px | Hero 副标题、导语段落 |
+| `{typography.body}` | 16px | 400 | 1.50 | -0.05px | 默认正文 |
+| `{typography.body-sm}` | 14px | 400 | 1.50 | 0 | 卡片正文、页脚栏目 |
+| `{typography.caption}` | 12px | 400 | 1.40 | 0 | 说明、元信息、状态 |
+| `{typography.button}` | 14px | 500 | 1.20 | 0 | 所有按钮标签 |
+| `{typography.eyebrow}` | 13px | 500 | 1.30 | 0.4px | 区块眉题(轻微正字距) |
+| `{typography.mono}` | 13px | 400 | 1.50 | 0 | 产品截图代码用 Linear Mono |
 
-### Principles
+### 原则(Principles)
 
-- **Aggressive negative tracking on display** (-3.0px at 80px ≈ 4% of size).
-- **Single voice from display to body.** Display-xl at 600 → body at 400 — same family, narrower weights.
-- **Eyebrow uses positive tracking** (+0.4px) — contrast against the negative-tracked display marks the eyebrow as taxonomy.
-- **Mono only in code contexts.** Linear Mono lives inside product screenshots — not on marketing chrome.
+- **展示字号激进负字距**(80px 处 -3.0px ≈ 字号的 4%)。
+- **从展示到正文一个声线。** display-xl 用 600 → 正文用 400——同一家族,更窄的字重区间。
+- **眉题使用正字距**(+0.4px)——与负字距的展示标题形成对比,把眉题标记为"分类信息"。
+- **等宽只出现在代码语境。** Linear Mono 只活在产品截图里——不上营销外壳。
 
-### Note on Font Substitutes
+### 字体替代说明(Note on Font Substitutes)
 
-Linear's custom typeface isn't publicly distributed; the documented fallback `SF Pro Display, -apple-system, system-ui` is the recommended substitute on macOS. For cross-platform implementation, **Inter** at weight 500 / 600 / 700 is the closest free substitute. **Geist Sans** is also viable. For mono, **JetBrains Mono** or **Geist Mono** at weight 400 closely approximates Linear Mono.
+Linear 的自研字体不公开分发;文档化的回退 `SF Pro Display, -apple-system, system-ui` 是 macOS 上的推荐替代。跨平台实现时,**Inter**(字重 500 / 600 / 700)是最接近的免费替代。**Geist Sans** 也可行。等宽方面,**JetBrains Mono** 或 **Geist Mono**(字重 400)能很好近似 Linear Mono。
 
 ## Layout
 
@@ -477,27 +481,27 @@ Linear's depth is carried by surface ladder + hairline borders. The brand resist
 **`footer`** — Dense link grid on `{colors.canvas}` with the Linear wordmark left.
 - Background `{colors.canvas}`, text `{colors.ink-subtle}`, type `{typography.caption}`, padding 64px 32px.
 
-## Do's and Don'ts
+## 应做与禁忌(Do's and Don'ts)
 
-### Do
+### 应做(Do)
 
-- Reserve `{colors.canvas}` (#010102) as the system's anchor surface — the faint blue tint is intentional.
-- Use `{colors.primary}` lavender ONLY for: brand mark, primary CTA, focus ring, link emphasis.
-- Use the four-step surface ladder for hierarchy. Avoid skipping levels.
-- Pair display weight 600 with body weight 400 — Linear resists 700+ display weights.
-- Apply negative letter-spacing aggressively on display.
-- Use product UI screenshots as the protagonist of every section.
-- Compose CTAs as `{rounded.md}` 8px corners.
+- 把 `{colors.canvas}`(#010102)作为系统的锚定表面——那丝蓝调是刻意的。
+- `{colors.primary}` 薰衣草蓝只用于:品牌标识、主 CTA、焦点环、链接强调。
+- 用四级表面阶梯表达层级。避免跳级。
+- 展示字重 600 配正文字重 400——Linear 抗拒 700+ 的展示字重。
+- 展示字号大胆应用负字距。
+- 让产品 UI 截图成为每个区块的主角。
+- CTA 一律 `{rounded.md}` 8px 圆角。
 
-### Don't
+### 禁忌(Don't)
 
-- Don't ship a light-mode marketing page.
-- Don't use lavender as a section background or card fill.
-- Don't introduce a second chromatic accent (orange, pink, green for marketing).
-- Don't add atmospheric gradients or spotlight cards.
-- Don't pill-round CTAs.
-- Don't use `#000000` true black as the canvas.
-- Don't combine multiple bright accents in product screenshot mockups.
+- 不要发布浅色模式的营销页。
+- 不要把薰衣草蓝用作区块背景或卡片填充。
+- 不要引入第二种彩色强调(营销用的橙、粉、绿)。
+- 不要添加氛围渐变或聚光卡片。
+- 不要把 CTA 做成药丸形。
+- 不要用 `#000000` 真黑当画布。
+- 不要在产品截图模型图中混用多种亮色强调。
 
 ## Responsive Behavior
 

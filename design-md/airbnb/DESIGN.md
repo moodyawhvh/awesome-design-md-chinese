@@ -326,96 +326,100 @@ components:
     typography: "{typography.caption-sm}"
 ---
 
-## Overview
+> 🌐 本文档由 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 翻译,英文原版见原项目。
+>
+> ⚠️ 本文件超过 10000 字符,仅汉化核心章节(概览 / 色彩 / 字体);布局、组件、响应式等其余章节保留英文原版,请对照原项目阅读。
 
-Airbnb is the canonical example of a generous, photography-led consumer marketplace. The base canvas is **pure white** (`{colors.canvas}` — #ffffff) with deep near-black ink (`{colors.ink}` — #222222) for headlines and body, and a single voltage of **Rausch** (`{colors.primary}` — #ff385c) carrying every primary CTA, the search-button orb, the heart save state, and inline brand links. There is no secondary brand color in mainline marketing — the **Luxe purple** (`{colors.luxe}` — #460479) and **Plus magenta** (`{colors.plus}` — #92174d) tokens are sub-brand accents that only appear inside Airbnb Luxe / Plus contexts.
+## 概览(Overview)
 
-Type runs **Airbnb Cereal VF** (a custom variable font Airbnb licenses), with **Circular** as the historic in-house fallback and a system stack underneath. Cereal sits at modest weights — display headlines render at 22–28px in weight 500–600, not the heavy 700+ weights that financial or enterprise systems lean on. The hero h1 ("Inspiration for future getaways") on the homepage is just 28px / 700, which would feel small on a typical SaaS page; here it works because the layout leans on photography (city collage, property cards) for visual weight rather than typographic muscle.
+Airbnb 是"慷慨的、摄影驱动的消费级市场"的教科书范例。基础画布是**纯白**(`{colors.canvas}` — #ffffff),标题与正文用深近黑墨色(`{colors.ink}` — #222222),唯一的电压来自**Rausch 珊瑚红**(`{colors.primary}` — #ff385c)——承担所有主 CTA、搜索按钮圆球、收藏红心以及行内品牌链接。主线营销没有第二品牌色——**Luxe 紫**(`{colors.luxe}` — #460479)与 **Plus 品红**(`{colors.plus}` — #92174d)是子品牌强调色,只出现在 Airbnb Luxe / Plus 语境中。
 
-The shape language is **soft**. Buttons are 8px radius (`{rounded.sm}`), property cards are ~14px (`{rounded.md}`), the search bar is fully pill-shaped (`{rounded.full}`), wishlist hearts and search orbs are circles (`{rounded.full}`), and category strip rounded corners run at 32px (`{rounded.xl}`). There is essentially no hard corner anywhere except the body grid itself — every interactive element is rounded.
+字体使用 **Airbnb Cereal VF**(Airbnb 授权的自研可变字体),历史备选是自家的 **Circular**,底下再垫系统字体栈。Cereal 保持在克制字重——展示标题以 22–28px、字重 500–600 渲染,不是金融或企业系统偏好的 700+ 重字重。首页 Hero h1("Inspiration for future getaways")只有 28px / 700,放在典型 SaaS 页面上会显得小;在这里却成立,因为版式靠摄影(城市拼贴、房源卡片)承担视觉重量,而不是靠字体肌肉。
 
-**Key Characteristics:**
-- Single accent color: `{colors.primary}` (#ff385c — "Rausch") carries every primary CTA, the search orb, the heart save state, and the brand wordmark. Used scarcely — most pages are 90% white + ink with one or two Rausch moments.
-- Custom variable type: `Airbnb Cereal VF`. Display weights sit at 500–700, body at 400. Modest weight is intentional — the system trusts photography for visual heft.
-- Three-product top nav: Homes, Experiences, Services — each with a hand-illustrated 32px icon and "NEW" badges (`{component.new-tag}`) on the two newer products. Active tab uses an underline rule (`{component.product-tab-active}`).
-- Pill-shaped global search bar: white surface, fully rounded (`{rounded.full}`), divided by 1px hairlines into Where / When / Who segments, terminated by a circular Rausch search orb (`{component.search-orb}`).
-- Property cards are photo-first: aspect-ratio rectangles with `{rounded.md}` corner clipping, swipeable image carousel, "Guest favorite" floating badge top-left, heart icon top-right, then 4–5 lines of meta beneath.
-- Editorial dropdowns (footer, language picker) are clean text columns over the white canvas — no card surface, no shadow.
-- The design system caps elevation at one shadow tier (`box-shadow: rgba(0,0,0,0.02) 0 0 0 1px, rgba(0,0,0,0.04) 0 2px 6px, rgba(0,0,0,0.1) 0 4px 8px`) — used on hover-floated cards and search/account dropdowns.
-- 8px base spacing system, with major sections at `{spacing.section}` (64px) — generous but not airy enough to feel editorial-magazine; the marketplace density wants more cards per scroll.
+形状语言是**柔软的**。按钮 8px 圆角(`{rounded.sm}`),房源卡片约 14px(`{rounded.md}`),搜索栏完全是药丸形(`{rounded.full}`),心愿红心和搜索圆球是圆形(`{rounded.full}`),分类条圆角达 32px(`{rounded.xl}`)。除正文栅格本身外几乎不存在硬角——每个可交互元素都是圆润的。
 
-## Colors
+**关键特征:**
+- 单一强调色:`{colors.primary}`(#ff385c — "Rausch")承担所有主 CTA、搜索圆球、收藏红心和品牌字标。使用克制——多数页面是 90% 白 + 墨色,只点缀一两个 Rausch 时刻。
+- 自研可变字体:`Airbnb Cereal VF`。展示字重 500–700,正文 400。克制的字重是刻意的——系统信任摄影来提供视觉分量。
+- 三产品顶部导航:Homes、Experiences、Services——各配手绘风 32px 图标,两个较新的产品带 "NEW" 徽章(`{component.new-tag}`)。激活页签用下划线规则(`{component.product-tab-active}`)。
+- 药丸形全局搜索栏:白色表面,全圆角(`{rounded.full}`),用 1px 发丝线分隔为 Where / When / Who 三段,末端是一个圆形 Rausch 搜索圆球(`{component.search-orb}`)。
+- 房源卡片照片优先:定宽高比的矩形配 `{rounded.md}` 圆角裁切、可滑动图片轮播、左上角"Guest favorite"悬浮徽章、右上角红心图标,下面是 4–5 行元信息。
+- 编辑式下拉(页脚、语言选择器)是白底上的干净文字栏——没有卡片表面,没有阴影。
+- 设计系统把层级封顶在单一阴影档(`box-shadow: rgba(0,0,0,0.02) 0 0 0 1px, rgba(0,0,0,0.04) 0 2px 6px, rgba(0,0,0,0.1) 0 4px 8px`)——用于悬停浮起的卡片和搜索/账户下拉。
+- 8px 基础间距系统,主要区块间距 `{spacing.section}`(64px)——慷慨但不足以显得像编辑杂志;市场密度要求每屏滚动容纳更多卡片。
 
-### Brand & Accent
-- **Rausch** (`{colors.primary}` — #ff385c): The single brand color. Used for primary CTA backgrounds (Reserve, Continue), the search orb, the heart save state on property cards, and inline brand links. The most recognizable color in consumer travel.
-- **Rausch Active** (`{colors.primary-active}` — #e00b41): The press / pointer-down variant — slightly more saturated. Used on `{component.button-primary-active}`.
-- **Rausch Disabled** (`{colors.primary-disabled}` — #ffd1da): A pale tint used on disabled CTAs.
-- **Luxe Purple** (`{colors.luxe}` — #460479): Sub-brand accent for Airbnb Luxe. Only appears inside Luxe-branded surfaces — never in mainline marketing.
-- **Plus Magenta** (`{colors.plus}` — #92174d): Sub-brand accent for Airbnb Plus. Same scoping as Luxe — sub-product only.
+## 色彩(Colors)
 
-### Surface
-- **Canvas** (`{colors.canvas}` — #ffffff): The default page floor for every public page. Airbnb does not have a dark mode on the public web.
-- **Surface Soft** (`{colors.surface-soft}` — #f7f7f7): The lightest fill — used on disabled fields, sub-nav hover backgrounds, and the inline search filter band.
-- **Surface Strong** (`{colors.surface-strong}` — #f2f2f2): Slightly heavier fill — circular icon-button surface (e.g., the breadcrumb back-arrow and listing toolbar buttons).
+### 品牌与强调色
+- **Rausch**(`{colors.primary}` — #ff385c):唯一的品牌色。用于主 CTA 背景(Reserve、Continue)、搜索圆球、房源卡片上的收藏红心、行内品牌链接。消费级旅行领域最具辨识度的颜色。
+- **Rausch 激活态**(`{colors.primary-active}` — #e00b41):按压 / 指针按下变体——饱和度略高。用于 `{component.button-primary-active}`。
+- **Rausch 禁用态**(`{colors.primary-disabled}` — #ffd1da):苍白色调,用于禁用 CTA。
+- **Luxe 紫**(`{colors.luxe}` — #460479):Airbnb Luxe 的子品牌强调色。只出现在 Luxe 品牌表面——绝不上主线营销。
+- **Plus 品红**(`{colors.plus}` — #92174d):Airbnb Plus 的子品牌强调色。与 Luxe 同样的作用域——仅限子产品。
 
-### Hairlines & Borders
-- **Hairline** (`{colors.hairline}` — #dddddd): The default 1px border tone — search bar dividers, table separators, footer column splitters, card 1px borders.
-- **Hairline Soft** (`{colors.hairline-soft}` — #ebebeb): A lighter divider used on long-scrolling editorial body separators.
-- **Border Strong** (`{colors.border-strong}` — #c1c1c1): A heavier stroke used on disabled outline buttons and form input outlines after focus.
+### 表面
+- **画布**(`{colors.canvas}` — #ffffff):所有公开页面的默认底色。Airbnb 公开网页不提供暗色模式。
+- **柔和表面**(`{colors.surface-soft}` — #f7f7f7):最浅的填充——用于禁用字段、子导航悬停背景和行内搜索筛选条。
+- **加重表面**(`{colors.surface-strong}` — #f2f2f2):略重的填充——圆形图标按钮表面(如面包屑返回箭头和房源工具栏按钮)。
 
-### Text
-- **Ink** (`{colors.ink}` — #222222): The dominant text color on light surfaces. Display headlines, body paragraphs, primary nav links, and most inline link text. Never pure black.
-- **Body** (`{colors.body}` — #3f3f3f): A secondary running-text color used inside long-form review and amenity copy where ink would feel too heavy.
-- **Muted** (`{colors.muted}` — #6a6a6a): Sub-titles inside city link blocks ("Cottage rentals", "Villa rentals"), inactive product-tab labels, footer category sub-labels, "View all" links.
-- **Muted Soft** (`{colors.muted-soft}` — #929292): Disabled link text. Used very sparingly.
-- **Star Rating** (`{colors.star-rating}` — #222222): The same ink token — Airbnb's star icon and "4.81" rating numbers all render in ink rather than a yellow/gold color, which is a deliberate brand choice (yellow stars feel cheap in travel context).
-- **On Primary** (`{colors.on-primary}` — #ffffff): White text on Rausch CTAs.
+### 发丝线与边框
+- **发丝线**(`{colors.hairline}` — #dddddd):默认 1px 边框色调——搜索栏分隔线、表格分隔、页脚栏目分割线、卡片 1px 边框。
+- **柔和发丝线**(`{colors.hairline-soft}` — #ebebeb):更浅的分隔线,用于长滚动的编辑式正文分隔。
+- **加重边框**(`{colors.border-strong}` — #c1c1c1):更重的描边,用于禁用的描边按钮和聚焦后的表单输入框轮廓。
 
-### Semantic
-- **Error** (`{colors.primary-error-text}` — #c13515): Inline error text for form validation. Distinct from Rausch — slightly darker, more saturated red.
-- **Error Hover** (`{colors.primary-error-text-hover}` — #b32505): Darkens on link hover.
-- **Legal Link Blue** (`{colors.legal-link}` — #428bff): Inline links inside legal copy (Privacy, Terms). Only used inside the legal sub-band.
+### 文字
+- **墨色**(`{colors.ink}` — #222222):浅色表面上的主导文字色。展示标题、正文段落、主导航链接和多数行内链接文字。从不用纯黑。
+- **正文**(`{colors.body}` — #3f3f3f):次要行文色,用于长篇点评和设施描述等墨色会显得过重的场合。
+- **弱化**(`{colors.muted}` — #6a6a6a):城市链接块内的副标题("Cottage rentals"、"Villa rentals")、未激活的产品页签标签、页脚分类子标签、"View all" 链接。
+- **更弱化**(`{colors.muted-soft}` — #929292):禁用链接文字。使用非常克制。
+- **星级评分**(`{colors.star-rating}` — #222222):与墨色同一令牌——Airbnb 的星星图标和 "4.81" 评分数字都用墨色渲染,而非黄/金色,这是刻意的品牌选择(黄星星在旅行语境里显得廉价)。
+- **主色上的文字**(`{colors.on-primary}` — #ffffff):Rausch CTA 上的白色文字。
 
-### Scrim
-- **Scrim** (`{colors.scrim}` — #000000 at 50% opacity): The global modal backdrop tone — date picker, login dialog, language picker. Stored as the base hex; opacity is applied at render time.
+### 语义色
+- **错误**(`{colors.primary-error-text}` — #c13515):表单校验的行内错误文字。与 Rausch 区分开——略深、更饱和的红。
+- **错误悬停**(`{colors.primary-error-text-hover}` — #b32505):链接悬停时加深。
+- **法务链接蓝**(`{colors.legal-link}` — #428bff):法务文案(Privacy、Terms)内的行内链接。只在法务子区块中使用。
 
-## Typography
+### 遮罩
+- **遮罩**(`{colors.scrim}` — #000000,50% 不透明度):全局弹窗背景色调——日期选择器、登录对话框、语言选择器。存储为基础十六进制值;不透明度在渲染时应用。
 
-### Font Family
-The system runs **Airbnb Cereal VF** for everything — display, body, navigation, captions, microcopy. Fallbacks walk `Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif`. **Circular** is the historic in-house typeface still kept as the first non-variable fallback; system stacks back it up.
+## 字体(Typography)
 
-There is no separate display family. The variable font carries the entire scale.
+### 字体族
+整个系统只用 **Airbnb Cereal VF**——展示、正文、导航、说明、微文案。回退栈为 `Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif`。**Circular** 是历史上的自研字体,仍作为第一个非可变回退保留;系统字体栈再兜底。
 
-### Hierarchy
+没有独立的展示字族。可变字体承担整个字号阶梯。
 
-| Token | Size | Weight | Line Height | Letter Spacing | Use |
+### 层级(Hierarchy)
+
+| Token | Size | Weight | Line Height | Letter Spacing | 用途 |
 |---|---|---|---|---|---|
-| `{typography.rating-display}` | 64px | 700 | 1.1 | -1px | Listing detail rating display ("4.81") |
-| `{typography.display-xl}` | 28px | 700 | 1.43 | 0 | Homepage h1 ("Inspiration for future getaways") |
-| `{typography.display-lg}` | 22px | 500 | 1.18 | -0.44px | Listing detail h1 ("Close to Fethiye Aliyah Bali Beach…") |
-| `{typography.display-md}` | 21px | 700 | 1.43 | 0 | Section heads inside listing detail ("What this place offers") |
-| `{typography.display-sm}` | 20px | 600 | 1.20 | -0.18px | Sub-section titles ("Things to know") |
-| `{typography.title-md}` | 16px | 600 | 1.25 | 0 | City link block titles ("Wilmington", "Athens") |
-| `{typography.title-sm}` | 16px | 500 | 1.25 | 0 | Footer column heads ("Support", "Hosting", "Airbnb") |
-| `{typography.body-md}` | 16px | 400 | 1.5 | 0 | Default running-text inside listing copy |
-| `{typography.body-sm}` | 14px | 400 | 1.43 | 0 | Card meta lines, dates, prices, distance text |
-| `{typography.caption}` | 14px | 500 | 1.29 | 0 | Search field segment labels ("Where", "When", "Who") |
-| `{typography.caption-sm}` | 13px | 400 | 1.23 | 0 | Footer legal line ("© 2026 Airbnb, Inc.") |
-| `{typography.badge}` | 11px | 600 | 1.18 | 0 | "Guest favorite" floating badge text |
-| `{typography.micro-label}` | 12px | 700 | 1.33 | 0 | Card amenity micro-labels ("Inline 6") |
-| `{typography.uppercase-tag}` | 8px | 700 | 1.25 | 0.32px (uppercase) | "NEW" badge on product nav tabs |
-| `{typography.button-md}` | 16px | 500 | 1.25 | 0 | Primary CTA button labels |
-| `{typography.button-sm}` | 14px | 500 | 1.29 | 0 | Pill button labels (category strip) |
-| `{typography.link}` | 14px | 400 | 1.43 | 0 | Inline body links |
-| `{typography.nav-link}` | 16px | 600 | 1.25 | 0 | Top product-nav labels (Homes, Experiences, Services) |
+| `{typography.rating-display}` | 64px | 700 | 1.1 | -1px | 房源详情评分展示("4.81") |
+| `{typography.display-xl}` | 28px | 700 | 1.43 | 0 | 首页 h1("Inspiration for future getaways") |
+| `{typography.display-lg}` | 22px | 500 | 1.18 | -0.44px | 房源详情 h1("Close to Fethiye Aliyah Bali Beach…") |
+| `{typography.display-md}` | 21px | 700 | 1.43 | 0 | 房源详情内的区块标题("What this place offers") |
+| `{typography.display-sm}` | 20px | 600 | 1.20 | -0.18px | 子区块标题("Things to know") |
+| `{typography.title-md}` | 16px | 600 | 1.25 | 0 | 城市链接块标题("Wilmington"、"Athens") |
+| `{typography.title-sm}` | 16px | 500 | 1.25 | 0 | 页脚栏目头("Support"、"Hosting"、"Airbnb") |
+| `{typography.body-md}` | 16px | 400 | 1.5 | 0 | 房源文案内的默认行文 |
+| `{typography.body-sm}` | 14px | 400 | 1.43 | 0 | 卡片元信息行、日期、价格、距离文字 |
+| `{typography.caption}` | 14px | 500 | 1.29 | 0 | 搜索字段段标签("Where"、"When"、"Who") |
+| `{typography.caption-sm}` | 13px | 400 | 1.23 | 0 | 页脚法务行("© 2026 Airbnb, Inc.") |
+| `{typography.badge}` | 11px | 600 | 1.18 | 0 | "Guest favorite" 悬浮徽章文字 |
+| `{typography.micro-label}` | 12px | 700 | 1.33 | 0 | 卡片设施微标签("Inline 6") |
+| `{typography.uppercase-tag}` | 8px | 700 | 1.25 | 0.32px(大写) | 产品导航页签上的 "NEW" 徽章 |
+| `{typography.button-md}` | 16px | 500 | 1.25 | 0 | 主 CTA 按钮标签 |
+| `{typography.button-sm}` | 14px | 500 | 1.29 | 0 | 药丸按钮标签(分类条) |
+| `{typography.link}` | 14px | 400 | 1.43 | 0 | 行内正文链接 |
+| `{typography.nav-link}` | 16px | 600 | 1.25 | 0 | 顶部产品导航标签(Homes、Experiences、Services) |
 
-### Principles
-Display weights stay modest. The homepage h1 at 28px / 700 is deliberately small — it tucks under the search bar so photography and the city-link grid carry visual hierarchy. The listing-detail h1 at 22px / 500 is even quieter; the listing photo banner does the work above it.
+### 原则(Principles)
+展示字重保持克制。首页 h1 只有 28px / 700,是刻意的小——它收在搜索栏下方,让摄影和城市链接网格承担视觉层级。房源详情 h1 只有 22px / 500,更加安静;上方的房源照片横幅才是主角。
 
-The single typographically loud moment in the entire system is the **rating display** (`{typography.rating-display}` — 64px / 700) on listing pages. That is the only place the system trusts type alone to carry hierarchy — rating numbers are a peak trust signal, so they get the loudest treatment.
+整个系统中唯一字体上"响亮"的时刻,是房源页的**评分展示**(`{typography.rating-display}` — 64px / 700)。这是系统唯一单纯信任字体来承载层级的地方——评分数字是信任度的峰值信号,所以得到最响亮的处理。
 
-### Note on Font Substitutes
-If Airbnb Cereal VF and Circular are unavailable, **Inter** is the closest open-source substitute. Adjust display headlines down by ~2% in line-height to match Cereal's slightly tighter cap height; otherwise the proportions transfer cleanly.
+### 字体替代说明(Note on Font Substitutes)
+如果 Airbnb Cereal VF 和 Circular 都不可用,**Inter** 是最接近的开源替代。展示标题的行高再下调约 2% 以匹配 Cereal 略紧的大写字高;其余比例可以干净地迁移。
 
 ## Layout
 
